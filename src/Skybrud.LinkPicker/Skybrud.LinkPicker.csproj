@@ -249,7 +249,6 @@
     </Content>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPicker.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerPreValues.html" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Json\JArrayExtensionMethods.cs" />
@@ -266,12 +265,9 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.less" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Table.less" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Skybrud.LinkPicker.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -298,6 +294,9 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)..\.skybrud\UpdateAssemblyInfoJson.exe" "$(ProjectPath)" "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

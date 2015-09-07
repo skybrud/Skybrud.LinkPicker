@@ -1,0 +1,10 @@
+{
+  "title": "Skybrud.LinkPicker",
+  "description": "Umbraco 7 link picker used internally at Skybrud.dk.",
+  "company": "Skybrud.dk",
+  "product": "Skybrud.PropertyEditors",
+  "copyright": "Copyright © 2015",
+  "version": "1.0.0.0",
+  "informationalVersion": "1.0.0",
+  "fileVersion": "1.0.0.0"
+}
