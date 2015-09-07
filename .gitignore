@@ -1,0 +1,6 @@
+src/packages/
+src/Skybrud.LinkPicker/bin/
+src/Skybrud.LinkPicker/obj/
+*.suo
+*.user
+src/Skybrud.LinkPicker/App_Data/NuGetBackup/
