@@ -1,10 +1,10 @@
 {
   "title": "Skybrud.LinkPicker",
-  "description": "Umbraco 7 link picker used internally at Skybrud.dk.",
+  "description": "Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco 7 that can be used as either a single link picker or as a multi link picker depending on configuration.",
   "company": "Skybrud.dk",
   "product": "Skybrud.PropertyEditors",
   "copyright": "Copyright © 2015",
   "version": "1.0.0.0",
   "informationalVersion": "1.0.0",
-  "fileVersion": "0.0.165.2"
+  "fileVersion": "0.0.165.3"
 }

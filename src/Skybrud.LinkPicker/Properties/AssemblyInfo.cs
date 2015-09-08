@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Skybrud.LinkPicker")]
-[assembly: AssemblyDescription("Umbraco 7 link picker used internally at Skybrud.dk.")]
+[assembly: AssemblyDescription("Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco 7 that can be used as either a single link picker or as a multi link picker depending on configuration.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Skybrud.dk")]
 [assembly: AssemblyProduct("Skybrud.PropertyEditors")]
