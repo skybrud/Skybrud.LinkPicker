@@ -259,6 +259,7 @@
     <Compile Include="LinkPickerMode.cs" />
     <Compile Include="LinkPickerPropertyValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfoGenerated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -296,6 +297,9 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)..\.skybrud\UpdateAssemblyInfoJson.exe" "$(ProjectPath)" "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)..\.skybrud\Skybrud.Social.PreBuildTool.exe" 2015-03-27 "$(ProjectPath)"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
