@@ -6,7 +6,7 @@ namespace Skybrud.LinkPicker {
     internal class LinkPickerPropertyValueConverter : IPropertyValueConverter {
 
         public bool IsConverter(PublishedPropertyType propertyType) {
-            return propertyType.PropertyEditorAlias == "Skybrud.PropertyEditors.LinkPicker";
+            return propertyType.PropertyEditorAlias == "Skybrud.LinkPicker";
         }
 
         public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) {
