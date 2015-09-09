@@ -1,4 +1,5 @@
-# Skybrud.LinkPicker
+Skybrud.LinkPicker
+==================
 
 Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco 7 that can be used as either a single link picker or as a multi link picker depending on configuration.
 
@@ -6,11 +7,22 @@ Besides working like most other link pickers, it can also be configured to show 
 
 ![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)
 
-### Installation
+## Installation
 
-This package will be released on both Nuget and Our Umbraco ;)
+1. [**NuGet Package**][NuGetPackage]  
+Install this NuGet package in your Visual Studio project. Makes updating easy.
 
-### Usage
+1. [**Umbraco package**][UmbracoPackage]  
+Install the package through the Umbraco backoffice.
+
+1. [**ZIP file**][GitHubRelease]  
+Grab a ZIP file of the latest release; unzip and move the contents to the root directory of your web application.
+
+[NuGetPackage]: https://www.nuget.org/packages/Skybrud.LinkPicker
+[UmbracoPackage]: https://our.umbraco.org/projects/backoffice-extensions/skybrudlinkpicker/
+[GitHubRelease]: https://github.com/skybrud/Skybrud.LinkPicker/releases
+
+## Usage
 
 The link picker (both single and multi) saves an array of link picker items. Technically the single link picker is a multi link picker, but limited to one item.
 
