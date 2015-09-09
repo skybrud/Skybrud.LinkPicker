@@ -15,6 +15,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-nuget": "~0.1.4",
-    "grunt-zip": "~0.17.0"
+    "grunt-zip": "~0.17.0",
+    "grunt-umbraco-package": "0.0.6"
   }
 }

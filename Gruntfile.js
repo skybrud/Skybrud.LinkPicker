@@ -60,6 +60,21 @@ module.exports = function(grunt) {
 				],
 				dest: 'releases/github/' + pkg.name + '.v' + version + '.zip'
 			}
+		},
+		umbracoPackage: {
+			options: {
+				name: pkg.name,
+				version: version,
+				url: pkg.url,
+				license: pkg.license.name,
+				licenseUrl: pkg.license.url,
+				author: pkg.author.name,
+				authorUrl: pkg.author.url,
+				readme: pkg.readme,
+				sourceDir: 'releases/temp/',
+				outputDir: 'releases/umbraco',
+				outputName: pkg.name + '.v' + version + '.zip'
+			}
 		}
 	});
 
@@ -67,8 +82,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-nuget');
 	grunt.loadNpmTasks('grunt-zip');
+	grunt.loadNpmTasks('grunt-umbraco-package');
 
-	grunt.registerTask('dev', ['clean', 'copy', 'nugetpack', 'zip']);
+	grunt.registerTask('dev', ['clean', 'copy', 'nugetpack', 'zip', 'umbracoPackage']);
 
 	grunt.registerTask('default', ['dev']);
 
