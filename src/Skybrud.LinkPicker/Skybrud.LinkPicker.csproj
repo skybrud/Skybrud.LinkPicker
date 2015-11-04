@@ -235,6 +235,7 @@
   <ItemGroup>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPicker.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerPreValues.js" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Directives\LinkPicker.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.css">
       <DependentUpon>LinkPicker.less</DependentUpon>
     </Content>
@@ -248,6 +249,7 @@
       <DependentUpon>Table.less</DependentUpon>
     </Content>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPicker.html" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerDirective.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerPreValues.html" />
   </ItemGroup>
   <ItemGroup>
