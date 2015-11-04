@@ -26,6 +26,7 @@
 		}
 	],
 	javascript: [
+		"~/App_Plugins/Skybrud.LinkPicker/Services/LinkPickerService.js",
 		"~/App_Plugins/Skybrud.LinkPicker/Directives/LinkPicker.js",
 		"~/App_Plugins/Skybrud.LinkPicker/Controllers/LinkPickerPreValues.js",
 	],

@@ -233,9 +233,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPicker.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerPreValues.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Directives\LinkPicker.js" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Services\LinkPickerService.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.css">
       <DependentUpon>LinkPicker.less</DependentUpon>
     </Content>
