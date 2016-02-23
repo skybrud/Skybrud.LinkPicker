@@ -26,10 +26,23 @@
         editLink: function(link, callback) {
             dialogService.closeAll();
             if (link.mode == 'media') {
-                dialogService.mediaPicker({
+
+                dialogService.linkPicker({
+                    currentTarget: {
+                        name: link.name,
+                        url: link.url,
+                        target: link.target
+                    },
                     callback: function (e) {
                         if (!e.id && !e.url && !confirm('The selected link appears to be empty. Do you want to continue anyways?')) return;
-                        if (callback) callback(service.parseUmbracoLink(e));
+
+                        if (parseUmbracoLink(e).id == 0) {
+                            e.id = link.id;
+                            e.isMedia = true;
+
+                        }
+
+                        $scope.model.value[index] = parseUmbracoLink(e);
                         dialogService.closeAll();
                     }
                 });
