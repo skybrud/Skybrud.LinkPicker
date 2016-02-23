@@ -1,8 +1,8 @@
 ﻿angular.module('umbraco.services').factory('skybrudLinkpickerService', function (dialogService) {
 
     var service = {
-        
-        parseUmbracoLink: function(e) {
+
+        parseUmbracoLink: function (e) {
             return {
                 id: e.id || 0,
                 name: e.name || '',
@@ -11,7 +11,7 @@
                 mode: (e.id ? (e.isMedia ? 'media' : 'content') : 'url')
             };
         },
-        
+
         addLink: function (callback) {
             dialogService.closeAll();
             dialogService.linkPicker({
@@ -22,8 +22,8 @@
                 }
             });
         },
-        
-        editLink: function(link, callback) {
+
+        editLink: function (link, callback) {
             dialogService.closeAll();
             if (link.mode == 'media') {
 
@@ -36,13 +36,13 @@
                     callback: function (e) {
                         if (!e.id && !e.url && !confirm('The selected link appears to be empty. Do you want to continue anyways?')) return;
 
-                        if (parseUmbracoLink(e).id == 0) {
+                        if (service.parseUmbracoLink(e).id == 0) {
                             e.id = link.id;
                             e.isMedia = true;
 
                         }
 
-                        $scope.model.value[index] = parseUmbracoLink(e);
+                        if (callback) callback(service.parseUmbracoLink(e));
                         dialogService.closeAll();
                     }
                 });
@@ -56,13 +56,13 @@
                     },
                     callback: function (e) {
                         if (!e.id && !e.url && !confirm('The selected link appears to be empty. Do you want to continue anyways?')) return;
-                        if (callback) callback(service.parseUmbracoLink(e)); 
+                        if (callback) callback(service.parseUmbracoLink(e));
                         dialogService.closeAll();
                     }
                 });
             }
         }
-        
+
     };
 
     return service;
