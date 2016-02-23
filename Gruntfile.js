@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 
-	var path = require('path');
-
 	// Load the package JSON file
 	var pkg = grunt.file.readJSON('package.json');
 
@@ -62,19 +60,21 @@ module.exports = function(grunt) {
 			}
 		},
 		umbracoPackage: {
-			options: {
-				name: pkg.name,
-				version: version,
-				url: pkg.url,
-				license: pkg.license.name,
-				licenseUrl: pkg.license.url,
-				author: pkg.author.name,
-				authorUrl: pkg.author.url,
-				readme: pkg.readme,
-				sourceDir: 'releases/temp/',
-				outputDir: 'releases/umbraco',
-				outputName: pkg.name + '.v' + version + '.zip'
-			}
+		    dist: {
+		        src: 'releases/temp/',
+		        dest: 'releases/umbraco',
+		        options: {
+		            name: pkg.name,
+		            version: version,
+		            url: pkg.url,
+		            license: pkg.license.name,
+		            licenseUrl: pkg.license.url,
+		            author: pkg.author.name,
+		            authorUrl: pkg.author.url,
+		            readme: pkg.readme,
+		            outputName: pkg.name + '.v' + version + '.zip'
+		        }
+		    }
 		}
 	});
 
