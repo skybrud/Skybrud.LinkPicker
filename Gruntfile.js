@@ -1,4 +1,6 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+
+    var path = require('path');
 
 	// Load the package JSON file
 	var pkg = grunt.file.readJSON('package.json');
@@ -34,12 +36,12 @@ module.exports = function(grunt) {
 				]
 			},
 			resources: {
-				files: [
+			    files: [
 					{
-						expand: true,
-						cwd: projectRoot + 'App_Plugins/' + pkg.name + '/',
-						src: ['**/*.*'],
-						dest: 'releases/temp/App_Plugins/' + pkg.name + '/'
+					    expand: true,
+					    cwd: projectRoot + 'App_Plugins/' + pkg.name + '/',
+					    src: ['**/*.*'],
+					    dest: 'releases/temp/App_Plugins/' + pkg.name + '/'
 					}
 				]
 			}
@@ -52,9 +54,13 @@ module.exports = function(grunt) {
 		},
 		zip: {
 			release: {
-				cwd: 'releases/temp/',
+			    router: function (filepath) {
+			        var name = path.basename(filepath);
+			        return name == 'LICENSE.html' ? name : filepath.replace('releases/temp/', '');
+			    },
 				src: [
-					'releases/temp/**/*.*'
+					'releases/temp/**/*.*',
+					projectRoot + '/LICENSE.html'
 				],
 				dest: 'releases/github/' + pkg.name + '.v' + version + '.zip'
 			}
