@@ -264,6 +264,7 @@
     <Compile Include="Properties\AssemblyInfoGenerated.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LICENSE.html" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.less" />
