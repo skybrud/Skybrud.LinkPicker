@@ -42,8 +42,15 @@
             });
 
             scope.addLink = function () {
-                p.addLink(function(link) {
+                p.addLink(function (link) {
+
+                    // Make sure "links" is an array (again)
+                    if (!scope.links || !Array.isArray(scope.links)) {
+                        scope.links = [];
+                    }
+
                     scope.links.push(link);
+
                 });
             };
 
