@@ -12,13 +12,14 @@ namespace Skybrud.LinkPicker.Extensions {
         /// <summary>
         /// Gets the first link item from a LinkPicker model from the property with the specified
         /// <code>propertyAlias</code>. If property isn't a link picker (or the list is empty),
-        /// <code>NULL</code> will be returned.
+        /// an empty item will be returned instead.
         /// </summary>
         /// <param name="content">The published content to read the property from.</param>
         /// <param name="propertyAlias">The alias of the property.</param>
         public static LinkPickerItem GetLinkPickerItem(this IPublishedContent content, string propertyAlias) {
             LinkPickerList list = content.GetPropertyValue(propertyAlias) as LinkPickerList;
-            return list == null ? null : list.Items.FirstOrDefault();
+            LinkPickerItem item = (list == null ? null : list.Items.FirstOrDefault());
+            return item ?? new LinkPickerItem();
         }
 
         /// <summary>
