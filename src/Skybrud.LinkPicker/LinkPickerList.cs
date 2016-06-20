@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Skybrud.Umbraco.GridData.Extensions.Json;
 
 namespace Skybrud.LinkPicker {
 
@@ -18,9 +20,28 @@ namespace Skybrud.LinkPicker {
         public JObject JObject { get; private set; }
 
         /// <summary>
+        /// Gets the title of the control.
+        /// </summary>
+        public string Title { get; private set; }
+
+        /// <summary>
+        /// Gets whether the control has a title.
+        /// </summary>
+        public bool HasTitle {
+            get { return !String.IsNullOrWhiteSpace(Title); }
+        }
+
+        /// <summary>
         /// Gets an array of all link items.
         /// </summary>
         public LinkPickerItem[] Items { get; internal set; }
+
+        /// <summary>
+        /// Gets whether the link picker list has any items.
+        /// </summary>
+        public bool HasItems {
+            get { return Items != null && Items.Length > 0; }
+        }
 
         /// <summary>
         /// Gets the total amount of link items.
@@ -33,11 +54,57 @@ namespace Skybrud.LinkPicker {
 
         #region Constructors
 
-        internal LinkPickerList() { }
+        /// <summary>
+        /// Initializes a new instance with an empty model.
+        /// </summary>
+        internal LinkPickerList() {
+            Items = new LinkPickerItem[0];
+        }
+
+        /// <summary>
+        /// Initializes a new instance based on the specified <see cref="JObject"/>.
+        /// </summary>
+        /// <param name="obj">An instance of <see cref="JObject"/> representing the link picker list.</param>
+        protected LinkPickerList(JObject obj) {
+            JObject = obj;
+            Title = obj.GetString("title");
+            Items = (obj.GetArray("items", LinkPickerItem.Parse) ?? new LinkPickerItem[0]).Where(x => x.IsValid).ToArray();
+        }
+
+        /// <summary>
+        /// Initializes a new instance based on the specified <see cref="JArray"/>.
+        /// </summary>
+        /// <param name="array">An instance of <see cref="JArray"/> representing the link picker list.</param>
+        protected LinkPickerList(JArray array) {
+            Items = (
+                from obj in array
+                let link = LinkPickerItem.Parse(obj as JObject)
+                where link != null
+                select link
+            ).ToArray();
+        }
 
         #endregion
 
         #region Static methods
+
+        /// <summary>
+        /// Parses the specified <see cref="JObject"/> into an instance of <see cref="LinkPickerList"/>.
+        /// </summary>
+        /// <param name="obj">An instance of <see cref="JObject"/> representing the link picker list.</param>
+        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <code>obj</code> is <code>null</code>.</returns>
+        public static LinkPickerList Parse(JObject obj) {
+            return obj == null ? null : new LinkPickerList(obj);
+        }
+
+        /// <summary>
+        /// Parses the specified <see cref="JArray"/> into an instance of <see cref="LinkPickerList"/>.
+        /// </summary>
+        /// <param name="array">An instance of <see cref="JArray"/> representing the link picker list.</param>
+        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <code>array</code> is <code>null</code>.</returns>
+        public static LinkPickerList Parse(JArray array) {
+            return array == null ? null : new LinkPickerList(array);
+        }
 
         /// <summary>
         /// Deseralizes the specified JSON string into an instance of <code>LinkPickerList</code>.
@@ -51,7 +118,7 @@ namespace Skybrud.LinkPicker {
                     Items = (
                         from obj in array
                         let link = LinkPickerItem.Parse(obj as JObject)
-                        where link != null
+                        where link != null && link.IsValid
                         select link
                     ).ToArray()
                 };
