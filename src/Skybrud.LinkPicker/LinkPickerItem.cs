@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.LinkPicker.Extensions.Json;
 
@@ -10,6 +11,12 @@ namespace Skybrud.LinkPicker {
     public class LinkPickerItem {
 
         #region Properties
+
+        /// <summary>
+        /// Gets a reference to the <see cref="JObject"/> the item was parsed from.
+        /// </summary>
+        [JsonIgnore]
+        public JObject JObject { get; private set; }
 
         /// <summary>
         /// Gets the ID of the selected content or media. If an URL has been selected, this will return <code>0</code>.
@@ -80,6 +87,7 @@ namespace Skybrud.LinkPicker {
             
             // Parse remaining properties
             return new LinkPickerItem {
+                JObject = obj,
                 Id = id,
                 Name = obj.GetString("name"),
                 Url = obj.GetString("url"),
