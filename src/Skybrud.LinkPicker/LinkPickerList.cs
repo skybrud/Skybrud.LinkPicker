@@ -12,6 +12,12 @@ namespace Skybrud.LinkPicker {
         #region Properties
 
         /// <summary>
+        /// Gets a reference to the <see cref="JObject"/> the link picker list was parsed from (if parsed from a JSON object).
+        /// </summary>
+        [JsonIgnore]
+        public JObject JObject { get; private set; }
+
+        /// <summary>
         /// Gets an array of all link items.
         /// </summary>
         public LinkPickerItem[] Items { get; internal set; }
