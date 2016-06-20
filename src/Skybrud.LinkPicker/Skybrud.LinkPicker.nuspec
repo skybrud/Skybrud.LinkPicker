@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>Anders Bjerner, Thomas Nielsen, Rasmus Fjord</authors>
     <owners>Anders Bjerner</owners>
-    <licenseUrl>https://github.com/skybrud/Skybrud.PropertyEditors/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/skybrud/Skybrud.PropertyEditors/</projectUrl>
+    <licenseUrl>https://github.com/skybrud/Skybrud.LinkPicker/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/skybrud/Skybrud.LinkPicker/</projectUrl>
     <iconUrl>http://www.skybrud.dk/img/5431sk/icon/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
