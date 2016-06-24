@@ -283,7 +283,7 @@
     <Content Include="Skybrud.LinkPicker.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AssemblyInfo.json" />
+    <None Include="Properties\AssemblyInfo.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
