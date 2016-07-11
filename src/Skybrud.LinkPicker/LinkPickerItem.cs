@@ -21,31 +21,37 @@ namespace Skybrud.LinkPicker {
         /// <summary>
         /// Gets the ID of the selected content or media. If an URL has been selected, this will return <code>0</code>.
         /// </summary>
+        [JsonProperty("id")]
         public int Id { get; private set; }
 
         /// <summary>
         /// Gets the name of the link.
         /// </summary>
+        [JsonProperty("name")]
         public string Name { get; private set; }
 
         /// <summary>
         /// Gets the URL of the link.
         /// </summary>
+        [JsonProperty("url")]
         public string Url { get; private set; }
 
         /// <summary>
         /// Gets the link target.
         /// </summary>
+        [JsonProperty("target")]
         public string Target { get; private set; }
 
         /// <summary>
         /// Gets the mode (or type) of the link.
         /// </summary>
+        [JsonProperty("mode")]
         public LinkPickerMode Mode { get; private set; }
 
         /// <summary>
         /// Gets whether the link is valid.
         /// </summary>
+        [JsonIgnore]
         public bool IsValid {
             get { return !String.IsNullOrWhiteSpace(Url); }
         }

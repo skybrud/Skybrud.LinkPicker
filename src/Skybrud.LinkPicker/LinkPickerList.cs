@@ -22,11 +22,13 @@ namespace Skybrud.LinkPicker {
         /// <summary>
         /// Gets the title of the control.
         /// </summary>
+        [JsonProperty("title")]
         public string Title { get; private set; }
 
         /// <summary>
         /// Gets whether the control has a title.
         /// </summary>
+        [JsonIgnore]
         public bool HasTitle {
             get { return !String.IsNullOrWhiteSpace(Title); }
         }
@@ -34,11 +36,13 @@ namespace Skybrud.LinkPicker {
         /// <summary>
         /// Gets an array of all link items.
         /// </summary>
+        [JsonProperty("items")]
         public LinkPickerItem[] Items { get; internal set; }
 
         /// <summary>
         /// Gets whether the link picker list has any items.
         /// </summary>
+        [JsonIgnore]
         public bool HasItems {
             get { return Items != null && Items.Length > 0; }
         }
@@ -46,6 +50,7 @@ namespace Skybrud.LinkPicker {
         /// <summary>
         /// Gets the total amount of link items.
         /// </summary>
+        [JsonProperty("count")]
         public int Count {
             get { return Items.Length; }
         }
