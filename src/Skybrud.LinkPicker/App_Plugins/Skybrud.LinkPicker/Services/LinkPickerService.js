@@ -1,4 +1,4 @@
-﻿angular.module('umbraco.services').factory('skybrudLinkpickerService', function (dialogService) {
+﻿angular.module('umbraco.services').factory('skybrudLinkPickerService', function (dialogService) {
 
     var service = {
 

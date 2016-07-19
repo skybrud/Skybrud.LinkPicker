@@ -1,4 +1,4 @@
-﻿angular.module('umbraco').directive('skybrudLinkpicker', ['dialogService', 'skybrudLinkpickerService', function (dialogService, p) {
+﻿angular.module('umbraco').directive('skybrudLinkpicker', ['dialogService', 'skybrudLinkPickerService', function (dialogService, p) {
     return {
         scope: {
             links: '=',
