@@ -237,6 +237,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerGridEditor.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerPreValues.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Directives\LinkPicker.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Services\LinkPickerService.js" />
@@ -254,6 +255,7 @@
     </Content>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPicker.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerDirective.html" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerGridEditor.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerPreValues.html" />
   </ItemGroup>
   <ItemGroup>

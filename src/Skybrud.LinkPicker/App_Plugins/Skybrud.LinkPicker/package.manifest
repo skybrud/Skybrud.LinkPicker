@@ -23,7 +23,8 @@
 	"javascript": [
 		"~/App_Plugins/Skybrud.LinkPicker/Services/LinkPickerService.js",
 		"~/App_Plugins/Skybrud.LinkPicker/Directives/LinkPicker.js",
-		"~/App_Plugins/Skybrud.LinkPicker/Controllers/LinkPickerPreValues.js"
+		"~/App_Plugins/Skybrud.LinkPicker/Controllers/LinkPickerPreValues.js",
+		"~/App_Plugins/Skybrud.LinkPicker/Controllers/LinkPickerGridEditor.js"
 	],
 	"css": [
 		"~/App_Plugins/Skybrud.LinkPicker/Styles/LinkPicker.css"
