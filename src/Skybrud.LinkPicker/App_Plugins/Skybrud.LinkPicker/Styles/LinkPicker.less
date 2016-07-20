@@ -6,6 +6,17 @@
 
         ul { margin: 0; list-style-type: none; }
 
+        label.title {
+            display: block;
+            input {
+                display: block;
+                box-sizing: border-box;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+
         @import "Table";
 
     }
@@ -24,6 +35,12 @@
             }
             & + .option {
                 margin-top: 20px;
+            }
+            &.titlePlaceholder {
+                input {
+                    max-width: initial;
+                    width: 350px;
+                }
             }
         }
         label {

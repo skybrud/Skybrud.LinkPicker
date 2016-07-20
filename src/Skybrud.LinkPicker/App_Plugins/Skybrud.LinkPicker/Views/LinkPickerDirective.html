@@ -1,4 +1,7 @@
 ﻿<div>
+    <label class="title" ng-if="config.title.show">
+        <input type="text" ng-model="value.title" placeholder="{{cfg.title.placeholder || 'Title'}}" class="title" />
+    </label>
     <div class="list" ng-show="!config.showTable">
         <ul ui-sortable="sortableOptionsList" ng-model="value.items">
             <li ng-repeat="link in value.items">
