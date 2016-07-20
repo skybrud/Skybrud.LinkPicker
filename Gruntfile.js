@@ -14,6 +14,9 @@ module.exports = function (grunt) {
 	// Get the version of the package
 	var version = assembly.informationalVersion ? assembly.informationalVersion : assembly.version;
 
+	var os = require("os");
+	var machineName = os.hostname();
+
 	grunt.initConfig({
 		pkg: pkg,
 		clean: {
@@ -42,6 +45,16 @@ module.exports = function (grunt) {
 					    cwd: projectRoot + 'App_Plugins/' + pkg.name + '/',
 					    src: ['**/*.*'],
 					    dest: 'releases/temp/App_Plugins/' + pkg.name + '/'
+					}
+				]
+			},
+			nuget: {
+			    files: [
+					{
+					    expand: true,
+					    cwd: 'releases/nuget/',
+					    src: [pkg.name + '.' + version + '.nupkg'],
+					    dest: 'D:/NuGet/'
 					}
 				]
 			}
@@ -90,7 +103,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-zip');
 	grunt.loadNpmTasks('grunt-umbraco-package');
 
-	grunt.registerTask('dev', ['clean', 'copy', 'nugetpack', 'zip', 'umbracoPackage']);
+	grunt.registerTask('dev', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage']);
+
+	if (machineName == 'abjerner2') {
+		grunt.registerTask('test', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage', 'copy:nuget']);
+	}
 
 	grunt.registerTask('default', ['dev']);
 
