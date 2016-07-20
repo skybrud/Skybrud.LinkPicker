@@ -52,7 +52,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         }
 
         private bool IsLinkPickerEditor(GridEditor editor) {
-            return editor.Alias == "skybrud.linkPicker" || editor.Alias.StartsWith("skybrud.linkPicker.");
+            return editor.Alias.ToLower() == "skybrud.linkpicker" || editor.Alias.ToLower().StartsWith("skybrud.linkpicker.");
         }
     
     }
