@@ -7,6 +7,13 @@ Besides working like most other link pickers, it can also be configured to show 
 
 ![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)
 
+## Links
+
+- <a href="#installation">Installation</a>
+- <a href="#using-the-property-editor">Using the property editor</a>
+- <a href="#using-the-grid-editor">Using the grid editor</a>
+- <a href="#using-the-link-picker-in-your-own-projects">Using the link picker in your own projects</a>
+
 ## Installation
 
 1. [**NuGet Package**][NuGetPackage]  
@@ -22,9 +29,9 @@ Grab a ZIP file of the latest release; unzip and move the contents to the root d
 [UmbracoPackage]: https://our.umbraco.org/projects/backoffice-extensions/skybrudlinkpicker/
 [GitHubRelease]: https://github.com/skybrud/Skybrud.LinkPicker/releases
 
-## Usage
+## Using the property editor
 
-The link picker (both single and multi) saves an array of link picker items. Technically the single link picker is a multi link picker, but limited to one item.
+The link picker (both single and multi) saves a list of link picker items. Technically the single link picker is a multi link picker, but limited to one item.
 
 To get a list of link picker items, you could simply use `GetPropertyValue` as you're used to:
 
@@ -51,7 +58,7 @@ or for getting a single link picker item:
 LinkPickerItem linkPickerItem1 = Model.GetLinkPickerItem("singleLinkPicker");
 ```
 
-The `GetLinkPickerItem` method will simply return the first item of a link picker list, or `null` if the list is empty.
+The `GetLinkPickerItem` method will simply return the first item of a link picker list, or an empty link item if the list is empty.
 
 To summary what's mentioned above, have a look at the Razor example below (which has the proper imports etc.):
 
@@ -81,3 +88,71 @@ To summary what's mentioned above, have a look at the Razor example below (which
     
 }
 ```
+
+While the array of items can be accessed through the `Items` property, there is also a `HasItems` property for checking whether the list has any items.
+
+If enabled (through the prevalue options), the property editor also supports specifying a title - eg. if the links are to be shown in a box or similar.
+
+The title can be accessed through the `Title` property of a `LinkPickerList` instance. Also there is a `HasTitle` property for checking whether a title has been specified.
+
+## Using the grid editor
+
+This package also supports a adding a link picker as a grid control in the Umbraco grid. Since you most likely want to configure the link picker your self, you have to add your own `package.manifest` with the details about the editor.
+
+In it's simplest form (default options), the JSON for the editor can look like this:
+
+```JSON
+{
+    "name": "Related links",
+    "alias": "Skybrud.LinkPicker.Related",
+    "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
+    "icon": "icon-link"
+}
+```
+
+The full configuration for the link picker looks like this:
+
+```JSON
+{
+    "name": "Related links",
+    "alias": "Skybrud.LinkPicker.Related",
+    "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
+    "icon": "icon-link",
+    "config": {
+        "title": {
+            "show": true,
+            "placeholder": "Related links"
+        },
+        "limit": 0,
+        "types": {
+            "url": true,
+            "content": true,
+            "media": true
+        },
+        "showTable": true,
+        "columns": {
+            "type": true,
+            "id": true,
+            "name": true,
+            "url": true,
+            "target": true
+        }
+    }
+}
+```
+
+## Using the link picker in your own projects
+
+In relation to the backoffice, the main logic of the link picker has been isolated into an Angular directive that can be used in your custom Angular views.
+
+Below is an example of the view for the property editor:
+
+```HTML
+<div class="SkybrudPropertyEditors LinkPicker" ng-class="{SingleLinkPicker: model.config.config.limit == 1, MultiLinkPicker: model.config.config.limit != 1}">
+    <skybrud-linkpicker value="model.value" config="model.config.config">Sponsored by omgbacon.dk</skybrud-linkpicker>
+</div>
+```
+
+The model of the link picker list is specified through the `value` attribute - you can simply pass a variable with an empty JavaScript object, and the link picker directive will make sure to set the correct properties.
+
+In a similar way, the configuration can be specified through the `config` attribute. The value specified through this attribute is a JavaScript object similar to the `config` object in the grid editor configuration as shown above.
