@@ -156,7 +156,7 @@ The full configuration for the link picker looks like this:
 ### Skybrud.Umbraco.GridData
 The link picker also works with our <a href="https://github.com/skybrud/Skybrud.Umbraco.GridData" target="_blank"><strong>Skybrud.Umbraco.GridData</strong></a> package.
 
-Given that you have an instance of `GridControl` representing a control with the link picker, the `Value` property will expose an instance of `GridControlLinkPickerValue`, while the `Editor.Config` property will expose an instance of `GridEditorLinkPickerConfig` for the editor configuration.
+Given that editor alias is either `skybrud.linkPicker` or starts with `skybrud.linkPicker.` and you have an instance of `GridControl` representing a control with the link picker, the `Value` property will expose an instance of `GridControlLinkPickerValue`, while the `Editor.Config` property will expose an instance of `GridEditorLinkPickerConfig` for the editor configuration.
 
 ## Using the link picker in your own projects
 
