@@ -3,9 +3,9 @@ Skybrud.LinkPicker
 
 Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco 7 that can be used as either a single link picker or as a multi link picker depending on configuration.
 
-Besides working like most other link pickers, it can also be configured to show a detailed list of the selected links (eg. as the table in the screenshot below).
+<!--Besides working like most other link pickers, it can also be configured to show a detailed list of the selected links (eg. as the table in the screenshot below).
 
-![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)
+![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)-->
 
 ## Links
 
@@ -32,6 +32,14 @@ Grab a ZIP file of the latest release; unzip and move the contents to the root d
 ## Using the property editor
 
 The link picker (both single and multi) saves a list of link picker items. Technically the single link picker is a multi link picker, but limited to one item.
+
+The link picker can be configured to be shown as either a standard unordered list (default):
+
+![image](https://cloud.githubusercontent.com/assets/3634580/16986321/1da83912-4e86-11e6-9177-a6f72dfd43e7.png)
+
+Or as a table:
+
+![image](https://cloud.githubusercontent.com/assets/3634580/16986288/e8cdbbae-4e85-11e6-976d-2c2d8994b5b9.png)
 
 To get a list of link picker items, you could simply use `GetPropertyValue` as you're used to:
 
@@ -99,12 +107,16 @@ The title can be accessed through the `Title` property of a `LinkPickerList` ins
 
 This package also supports a adding a link picker as a grid control in the Umbraco grid. Since you most likely want to configure the link picker your self, you have to add your own `package.manifest` with the details about the editor.
 
+With both `showTable` and `title.show` enabled, the grid editor will look like this:
+
+![image](https://cloud.githubusercontent.com/assets/3634580/16986016/9b70c604-4e84-11e6-94c0-a32dac9e4b19.png)
+
 In it's simplest form (default options), the JSON for the editor can look like this:
 
 ```JSON
 {
     "name": "Related links",
-    "alias": "Skybrud.LinkPicker.Related",
+    "alias": "skybrud.linkPicker.related",
     "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
     "icon": "icon-link"
 }
@@ -115,7 +127,7 @@ The full configuration for the link picker looks like this:
 ```JSON
 {
     "name": "Related links",
-    "alias": "Skybrud.LinkPicker.Related",
+    "alias": "skybrud.linkPicker.related",
     "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
     "icon": "icon-link",
     "config": {
@@ -140,6 +152,11 @@ The full configuration for the link picker looks like this:
     }
 }
 ```
+
+### Skybrud.Umbraco.GridData
+The link picker also works with our <a href="https://github.com/skybrud/Skybrud.Umbraco.GridData" target="_blank"><strong>Skybrud.Umbraco.GridData</strong></a> package.
+
+Given that you have an instance of `GridControl` representing a control with the link picker, the `Value` property will expose an instance of `GridControlLinkPickerValue`, while the `Editor.Config` property will expose an instance of `GridEditorLinkPickerConfig` for the editor configuration.
 
 ## Using the link picker in your own projects
 
