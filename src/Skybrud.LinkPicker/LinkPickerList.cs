@@ -112,27 +112,14 @@ namespace Skybrud.LinkPicker {
         }
 
         /// <summary>
-        /// Deseralizes the specified JSON string into an instance of <code>LinkPickerList</code>.
+        /// Deseralizes the specified JSON string into an instance of <see cref="LinkPickerList"/>.
         /// </summary>
         /// <param name="json">The raw JSON to be parsed.</param>
         public static LinkPickerList Deserialize(string json) {
-
-            if (json != null && json.StartsWith("[") && json.EndsWith("]")) {
-                JArray array = JsonConvert.DeserializeObject<JArray>(json);
-                return new LinkPickerList {
-                    Items = (
-                        from obj in array
-                        let link = LinkPickerItem.Parse(obj as JObject)
-                        where link != null && link.IsValid
-                        select link
-                    ).ToArray()
-                };
-            }
-
-            return new LinkPickerList {
-                Items = new LinkPickerItem[0]
-            };
-
+            if (json == null) return new LinkPickerList();
+            if (json.StartsWith("{") && json.EndsWith("}")) return Parse(JsonConvert.DeserializeObject<JObject>(json));
+            if (json.StartsWith("[") && json.EndsWith("]")) return Parse(JsonConvert.DeserializeObject<JArray>(json));
+            return new LinkPickerList();
         }
 
         #endregion
