@@ -32,7 +32,9 @@ module.exports = function (grunt) {
 						cwd: projectRoot + 'bin/',
 						src: [
 							pkg.name + '.dll',
-							pkg.name + '.xml'
+							pkg.name + '.xml',
+							'Skybrud.Umbraco.GridData.dll',
+							'Skybrud.Umbraco.GridData.xml'
 						],
 						dest: 'releases/temp/bin/'
 					}
