@@ -1,7 +1,11 @@
 ﻿using System;
+using AutoMapper.Mappers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.LinkPicker.Extensions.Json;
+using Skybrud.LinkPicker.Json.Converters;
+using umbraco.cms.helpers;
+using Umbraco.Core.Models;
 
 namespace Skybrud.LinkPicker {
 
@@ -62,6 +66,23 @@ namespace Skybrud.LinkPicker {
 
         internal LinkPickerItem() { }
 
+        /// <summary>
+        /// Initializes a new link picker item.
+        /// </summary>
+        /// <param name="id">The ID of the content or media item.</param>
+        /// <param name="name">The name (text) of the link.</param>
+        /// <param name="url">The URL of the link.</param>
+        /// <param name="target">The target of the link.</param>
+        /// <param name="mode">The mode of the link - either <see cref="LinkPickerMode.Content"/>,
+        /// <see cref="LinkPickerMode.Media"/> or <see cref="LinkPickerMode.Url"/>.</param>
+        public LinkPickerItem(int id, string name, string url, string target, LinkPickerMode mode) {
+            Id = id;
+            Name = name;
+            Url = url;
+            Target = target;
+            Mode = mode;
+        }
+
         #endregion
 
         #region Static methods
@@ -101,6 +122,35 @@ namespace Skybrud.LinkPicker {
                 Mode = mode
             };
 
+        }
+
+        public static LinkPickerItem GetFromContent(IPublishedContent content) {
+            if (content == null) throw new ArgumentNullException("content");
+            return new LinkPickerItem {
+                Id = content.Id,
+                Name = content.Name,
+                Url = content.Url,
+                Mode = LinkPickerMode.Content
+            };
+        }
+
+        public static LinkPickerItem GetFromMedia(IPublishedContent media) {
+            if (media == null) throw new ArgumentNullException("media");
+            return new LinkPickerItem {
+                Id = media.Id,
+                Name = media.Name,
+                Url = media.Url,
+                Mode = LinkPickerMode.Media
+            };
+        }
+
+        public static LinkPickerItem GetFromUrl(string url, string name = null, string target = null) {
+            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentNullException("url");
+            return new LinkPickerItem {
+                Name = name + "",
+                Url = url,
+                Mode = LinkPickerMode.Url
+            };
         }
 
         #endregion
