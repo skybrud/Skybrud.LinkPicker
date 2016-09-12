@@ -1,8 +1,12 @@
-﻿namespace Skybrud.LinkPicker {
+﻿using Newtonsoft.Json;
+using Skybrud.LinkPicker.Json.Converters;
+
+namespace Skybrud.LinkPicker {
     
     /// <summary>
     /// Enum describing the type of the link.
     /// </summary>
+    [JsonConverter(typeof(LinkPickerEnumConverter))]
     public enum LinkPickerMode {
     
         /// <summary>
