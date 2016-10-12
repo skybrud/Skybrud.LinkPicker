@@ -1,26 +1,59 @@
 ﻿using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 
-namespace Skybrud.LinkPicker {
+namespace Skybrud.LinkPicker
+{
 
-    internal class LinkPickerPropertyValueConverter : IPropertyValueConverter {
+    internal class LinkPickerPropertyValueConverter : PropertyValueConverterBase, IPropertyValueConverterMeta
+    {
 
-        public bool IsConverter(PublishedPropertyType propertyType) {
+        public override bool IsConverter(PublishedPropertyType propertyType)
+        {
             return propertyType.PropertyEditorAlias == "Skybrud.LinkPicker";
         }
 
-        public object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview) {
+        public override object ConvertDataToSource(PublishedPropertyType propertyType, object data, bool preview)
+        {
             return LinkPickerList.Deserialize(data as string);
         }
 
-        public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview) {
-            return source;
+        public override object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
+        {
+            return source as LinkPickerList;
         }
 
-        public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview) {
+        public override object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
+        {
             return null;
         }
 
+        public PropertyCacheLevel GetPropertyCacheLevel(PublishedPropertyType propertyType, PropertyCacheValue cacheValue)
+        {
+            PropertyCacheLevel level;
+
+            switch (cacheValue)
+            {
+                case PropertyCacheValue.Object:
+                    level = PropertyCacheLevel.ContentCache;
+                    break;
+                case PropertyCacheValue.Source:
+                    level = PropertyCacheLevel.Content;
+                    break;
+                case PropertyCacheValue.XPath:
+                    level = PropertyCacheLevel.Content;
+                    break;
+                default:
+                    level = PropertyCacheLevel.None;
+                    break;
+            }
+
+            return level;
+        }
+
+        public System.Type GetPropertyValueType(PublishedPropertyType propertyType)
+        {
+            return typeof(LinkPickerList);
+        }
     }
 
 }
