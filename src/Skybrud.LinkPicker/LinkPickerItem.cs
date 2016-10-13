@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Skybrud.LinkPicker.Extensions.Json;
+using Skybrud.Essentials.Json.Extensions;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
