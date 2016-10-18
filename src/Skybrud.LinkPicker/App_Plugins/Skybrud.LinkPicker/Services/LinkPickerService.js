@@ -24,7 +24,7 @@
             });
         },
 
-        editLink: function (link, closeAllDialogs) {
+        editLink: function (link, callback, closeAllDialogs) {
             closeAllDialogs = closeAllDialogs !== false;
             if (closeAllDialogs) dialogService.closeAll();
             if (link.mode == 'media') {
