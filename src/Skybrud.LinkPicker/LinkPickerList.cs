@@ -55,6 +55,14 @@ namespace Skybrud.LinkPicker {
             get { return Items.Length; }
         }
 
+        /// <summary>
+        /// Gets whether the link picker list is valid (alias of <see cref="HasItems"/>).
+        /// </summary>
+        [JsonIgnore]
+        public bool IsValid {
+            get { return HasItems; }
+        }
+
         #endregion
 
         #region Constructors
