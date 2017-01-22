@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 		pkg: pkg,
 		clean: {
 			files: [
-				'releases/temp/**/*.*'
+				'releases/temp/'
 			]
 		},
 		copy: {
@@ -107,10 +107,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-zip');
 	grunt.loadNpmTasks('grunt-umbraco-package');
 
-	grunt.registerTask('dev', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage']);
+	grunt.registerTask('dev', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage', 'clean']);
 
 	if (machineName == 'abjerner2') {
-		grunt.registerTask('test', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage', 'copy:nuget']);
+		grunt.registerTask('test', ['clean', 'copy:binary', 'copy:resources', 'nugetpack', 'zip', 'umbracoPackage', 'copy:nuget', 'clean']);
 	}
 
 	grunt.registerTask('default', ['dev']);
