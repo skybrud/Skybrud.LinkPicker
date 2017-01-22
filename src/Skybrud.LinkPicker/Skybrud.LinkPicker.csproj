@@ -132,8 +132,8 @@
       <HintPath>..\packages\Skybrud.Essentials.1.0.7\lib\net45\Skybrud.Essentials.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Skybrud.Umbraco.GridData, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Umbraco.GridData.1.5.1\lib\net45\Skybrud.Umbraco.GridData.dll</HintPath>
+    <Reference Include="Skybrud.Umbraco.GridData, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Umbraco.GridData.2.0.0-beta003\lib\net45\Skybrud.Umbraco.GridData.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.5675.23469, Culture=neutral, processorArchitecture=MSIL">
@@ -266,8 +266,6 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerPreValues.html" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\Json\JArrayExtensionMethods.cs" />
-    <Compile Include="Extensions\Json\JObjectExtensionMethods.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
     <Compile Include="Grid\Config\GridEditorLinkPickerTitleConfig.cs" />
     <Compile Include="Grid\Converters\LinkPickerGridConverter.cs" />

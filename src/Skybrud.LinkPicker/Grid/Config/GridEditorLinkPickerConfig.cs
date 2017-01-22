@@ -1,29 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
 using Skybrud.Umbraco.GridData;
-using Skybrud.Umbraco.GridData.Interfaces;
-using Skybrud.Umbraco.GridData.Json;
+using Skybrud.Umbraco.GridData.Config;
 
 namespace Skybrud.LinkPicker.Grid.Config {
 
     /// <summary>
     /// Class representing the configuration of a link picker.
     /// </summary>
-    public class GridEditorLinkPickerConfig : GridJsonObject, IGridEditorConfig {
-
-        #region Properties
-
-        /// <summary>
-        /// Gets a reference to the parent editor.
-        /// </summary>
-        public GridEditor Editor { get; private set; }
-            
-        #endregion
+    public class GridEditorLinkPickerConfig : GridEditorConfigBase {
 
         #region Constructors
 
-        private GridEditorLinkPickerConfig(GridEditor editor, JObject obj) : base(obj) {
-            Editor = editor;
-        }
+        private GridEditorLinkPickerConfig(GridEditor editor, JObject obj) : base(editor, obj) { }
 
         #endregion
 

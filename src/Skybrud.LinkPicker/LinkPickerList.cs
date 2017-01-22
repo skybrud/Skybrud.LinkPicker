@@ -59,7 +59,7 @@ namespace Skybrud.LinkPicker {
         /// Gets whether the link picker list is valid (alias of <see cref="HasItems"/>).
         /// </summary>
         [JsonIgnore]
-        public bool IsValid {
+        public virtual bool IsValid {
             get { return HasItems; }
         }
 

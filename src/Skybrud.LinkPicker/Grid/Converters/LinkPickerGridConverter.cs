@@ -2,7 +2,6 @@
 using Skybrud.LinkPicker.Grid.Config;
 using Skybrud.LinkPicker.Grid.Values;
 using Skybrud.Umbraco.GridData;
-using Skybrud.Umbraco.GridData.Extensions.Json;
 using Skybrud.Umbraco.GridData.Interfaces;
 using Skybrud.Umbraco.GridData.Rendering;
 

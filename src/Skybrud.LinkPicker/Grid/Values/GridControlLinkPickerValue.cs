@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Skybrud.Umbraco.GridData;
 using Skybrud.Umbraco.GridData.Interfaces;
 
@@ -13,12 +15,42 @@ namespace Skybrud.LinkPicker.Grid.Values {
         /// </summary>
         public GridControl Control { get; private set; }
 
+        /// <summary>
+        /// Gets whether the link picker list is valid (alias of <see cref="LinkPickerList.HasItems"/>).
+        /// </summary>
+        [JsonIgnore]
+        public override bool IsValid {
+            get { return HasItems; }
+        }
+
         #endregion
 
         #region Constructors
 
         protected GridControlLinkPickerValue(GridControl control, JObject obj) : base(obj) {
             Control = control;
+        }
+
+        #endregion
+
+        #region Member methods
+
+        public string GetSearchableText() {
+
+            if (!IsValid) return "";
+
+            StringBuilder sb = new StringBuilder();
+                
+            // Append the title of the control
+            sb.AppendLine(Title);
+            sb.AppendLine();
+
+            // Append the name (link text) of each item
+            foreach (var item in Items) {
+                sb.AppendLine(item.Name);
+            }
+
+            return sb.ToString().Trim();
         }
 
         #endregion
