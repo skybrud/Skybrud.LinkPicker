@@ -58,7 +58,7 @@ namespace Skybrud.LinkPicker.Grid.Values {
         #region Static methods
 
         /// <summary>
-        /// Gets an instance of <see cref="GridControlLinkPickerValue"/> from the specified <see cref="JObject"/>.
+        /// Gets an instance of <see cref="GridControlLinkPickerValue"/> from the specified <paramref name="obj"/>.
         /// </summary>
         /// <param name="control">The parent control.</param>
         /// <param name="obj">The instance of <see cref="JObject"/> to be parsed.</param>

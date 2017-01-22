@@ -309,7 +309,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
-    <Compile Include="Grid\Config\GridEditorLinkPickerTitleConfig.cs" />
+    <Compile Include="Grid\Config\GridEditorLinkPickerConfigColumns.cs" />
+    <Compile Include="Grid\Config\GridEditorLinkPickerConfigTypes.cs" />
+    <Compile Include="Grid\Config\GridEditorLinkPickerConfigTitle.cs" />
     <Compile Include="Grid\Converters\LinkPickerGridConverter.cs" />
     <Compile Include="Grid\Values\GridControlLinkPickerValue.cs" />
     <Compile Include="Grid\Config\GridEditorLinkPickerConfig.cs" />

@@ -10,7 +10,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
     public class LinkPickerGridConverter : IGridConverter {
 
         /// <summary>
-        /// Converts the specified <code>token</code> into an instance of <see cref="IGridControlValue"/>.
+        /// Converts the specified <paramref name="token"/> into an instance of <see cref="IGridControlValue"/>.
         /// </summary>
         /// <param name="control">A reference to the parent <see cref="GridControl"/>.</param>
         /// <param name="token">The instance of <see cref="JToken"/> representing the control value.</param>
@@ -24,7 +24,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         }
 
         /// <summary>
-        /// Converts the specified <code>token</code> into an instance of <see cref="IGridEditorConfig"/>.
+        /// Converts the specified <paramref name="token"/> into an instance of <see cref="IGridEditorConfig"/>.
         /// </summary>
         /// <param name="editor"></param>
         /// <param name="token">The instance of <see cref="JToken"/> representing the editor config.</param>
@@ -38,7 +38,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         }
 
         /// <summary>
-        /// Gets an instance <see cref="GridControlWrapper"/> for the specified <code>control</code>.
+        /// Gets an instance <see cref="GridControlWrapper"/> for the specified <paramref name="control"/>.
         /// </summary>
         /// <param name="control">The control to be wrapped.</param>
         /// <param name="wrapper">The wrapper.</param>
