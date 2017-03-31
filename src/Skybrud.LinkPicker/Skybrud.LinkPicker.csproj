@@ -296,11 +296,11 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.min.css">
       <DependentUpon>LinkPicker.less</DependentUpon>
     </Content>
-    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Table.css">
-      <DependentUpon>Table.less</DependentUpon>
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\_table.css">
+      <DependentUpon>_table.less</DependentUpon>
     </Content>
-    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Table.min.css">
-      <DependentUpon>Table.less</DependentUpon>
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\_table.min.css">
+      <DependentUpon>_table.less</DependentUpon>
     </Content>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPicker.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Views\LinkPickerDirective.html" />
@@ -329,7 +329,7 @@
     <Content Include="packages.config" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.less" />
-    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Table.less" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\_table.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Skybrud.LinkPicker.nuspec" />
