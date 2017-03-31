@@ -289,6 +289,7 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\Directives\LinkPicker.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\da-DK.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\en-GB.xml" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\en-US.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Services\LinkPickerService.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.css">
       <DependentUpon>LinkPicker.less</DependentUpon>
@@ -325,6 +326,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\_preview.less" />
     <None Include="LICENSE.html" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />

@@ -2,10 +2,10 @@
     <label class="title" ng-if="config.title.show">
         <input type="text" ng-model="value.title" placeholder="{{cfg.title.placeholder || 'Title'}}" class="title" />
     </label>
-    <div class="list" ng-show="!config.showTable">
+    <div class="list" ng-show="config.view == 'list'">
         <ul ui-sortable="sortableOptionsList" ng-model="value.items">
             <li ng-repeat="link in value.items">
-                <a href="{{link.url}}" target="_blank">{{link.name || link.url}}</a>
+                <a href="{{link.url}}" target="_blank" rel="noopener">{{link.name || link.url}}</a>
                 <a class="edit" href="#" prevent-default="" ng-click="editLink(link, $index)"><i class="icon icon-edit"></i></a>
                 <a class="remove" href="#" prevent-default="" ng-click="removeLink($index)"><i class="icon icon-delete"></i></a>
                 <i class="icon icon-navigation handle" ng-show="value.items.length > 1"></i>
@@ -18,7 +18,7 @@
             </a>
         </div>
     </div>
-    <div class="table" ng-show="config.showTable">
+    <div class="table" ng-show="config.view == 'table'">
         <table ng-show="value.items.length">
             <thead>
                 <tr>
@@ -61,5 +61,35 @@
                 <i class="icon icon-add"></i>
             </a>
         </div>
+    </div>
+    <div ng-show="config.view == 'details'">
+        <div ui-sortable="sortableOptionsPreview" ng-model="value.items">
+            <div class="linkpicker-preview linkpicker-preview--sortable" ng-clggass="{'linkpicker-preview--sortable': sortable, 'linkpicker-preview--unpublished': published === false }" ng-repeat="link in value.items">
+                <i class="linkpicker-preview__icon icon-document" ng-if="link.mode == 'content'"></i>
+                <i class="linkpicker-preview__icon icon-umb-media" ng-if="link.mode == 'media'"></i>
+                <i class="linkpicker-preview__icon icon-link" ng-if="link.mode == 'url'"></i>
+                <div class="linkpicker-preview__content">
+                    <div class="linkpicker-preview__name">
+                        <a href="{{link.url}}" target="_blank" rel="noopener">{{link.name || link.url}}</a>
+                        <small ng-if="link.target == '_blank'">(<localize key="linkpicker_targetBlank">new tab/window</localize>)</small>
+                    </div>
+                    <div class="linkpicker-preview__description">
+                        <localize key="linkpicker_{{link.mode}}">{{link.mode}}</localize>
+                        <span ng-if="link.name">&bull; {{link.url}}</span>
+                    </div>
+                </div>
+                <div class="linkpicker-preview__actions">
+                    <a class="linkpicker-preview__action" href="#" prevent-default="" ng-click="editLink(link, $index)">
+                        <localize key="linkpicker_editLink">Edit</localize>
+                    </a>
+                    <a class="linkpicker-preview__action linkpicker-preview__action--red" href="#" prevent-default="" ng-click="removeLink($index)">
+                        <localize key="linkpicker_removeLink">Remove</localize>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a ng-show="!config.limit || value.items.length < config.limit" class="linkpicker-preview-add" href="#" ng-click="addLink()" prevent-default="">
+            <localize key="linkpicker_addLink">Add link</localize>
+        </a>
     </div>
 </div>

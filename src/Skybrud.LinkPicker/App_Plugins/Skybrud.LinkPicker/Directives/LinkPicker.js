@@ -45,7 +45,9 @@
                 if (scope.cfg.types.url === undefined) scope.cfg.types.url = true;
                 if (scope.cfg.types.content === undefined) scope.cfg.types.content = true;
                 if (scope.cfg.types.media === undefined) scope.cfg.types.media = true;
-                if (scope.cfg.showTable == undefined) scope.cfg.showTable = false;
+                if (scope.cfg.view == undefined) scope.cfg.view = 'details';
+                if (scope.cfg.showTable === true) scope.cfg.view = 'table';
+                if (scope.cfg.showTable === false) scope.cfg.view = 'list';
                 if (!scope.cfg.columns) scope.cfg.columns = {};
                 if (scope.cfg.columns.type === undefined) scope.cfg.columns.type = true;
                 if (scope.cfg.columns.content === undefined) scope.cfg.columns.content = true;
@@ -91,6 +93,14 @@
                 handle: '.handle',
                 tolerance: 'pointer',
                 containment: 'parent'
+            };
+
+            scope.sortableOptionsPreview = {
+                distance: 10,
+                tolerance: 'pointer',
+                scroll: true,
+                zIndex: 6000,
+                disabled: false
             };
 
             initValue();
