@@ -10,6 +10,9 @@
         templateUrl: '/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html',
         link: function (scope) {
 
+            var v = Umbraco.Sys.ServerVariables.application.version.split('.');
+            scope.umbVersion = parseFloat(v[0] + '.' + v[1]);
+
             function initValue() {
 
                 // Initialize an empty model if no value at all
