@@ -48,7 +48,7 @@
                 if (scope.cfg.types.url === undefined) scope.cfg.types.url = true;
                 if (scope.cfg.types.content === undefined) scope.cfg.types.content = true;
                 if (scope.cfg.types.media === undefined) scope.cfg.types.media = true;
-                if (scope.cfg.view == undefined) scope.cfg.view = 'details';
+                if (scope.cfg.view == undefined) scope.cfg.view = 'preview';
                 if (scope.cfg.showTable === true) scope.cfg.view = 'table';
                 if (scope.cfg.showTable === false) scope.cfg.view = 'list';
                 if (!scope.cfg.columns) scope.cfg.columns = {};

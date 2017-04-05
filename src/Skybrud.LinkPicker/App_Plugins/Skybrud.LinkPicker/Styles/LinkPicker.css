@@ -148,17 +148,30 @@
 .SkybrudPropertyEditors.LinkPicker .linkpicker-preview--sortable {
   cursor: move;
 }
-.SkybrudPropertyEditors.LinkPicker.umbraco-gte76 .linkpicker-preview-add {
+.SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview-add {
   color: #00aea2;
 }
-.SkybrudPropertyEditors.LinkPicker.umbraco-gte76 .linkpicker-preview {
+.SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview {
   background: #f3f3f5;
 }
-.SkybrudPropertyEditors.LinkPicker.umbraco-gte76 .linkpicker-preview__action:hover {
+.SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview__action:hover {
   color: #03bfb3;
 }
-.SkybrudPropertyEditors.LinkPicker.umbraco-gte76 .linkpicker-preview__action--red:hover {
+.SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview__action--red:hover {
   color: #fe3e39;
+}
+.SkybrudPropertyEditors.LinkPickerOptions .optionGroup .optionGroupTitle {
+  margin-bottom: 20px;
+  background: #f8f8f8;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #D9D9D9;
+}
+.SkybrudPropertyEditors.LinkPickerOptions .optionGroup .option {
+  margin-left: 20px;
+}
+.SkybrudPropertyEditors.LinkPickerOptions .optionGroup + .optionGroup {
+  margin-top: 40px;
 }
 .SkybrudPropertyEditors.LinkPickerOptions .option {
   display: flex;
@@ -179,6 +192,7 @@
   width: 350px;
 }
 .SkybrudPropertyEditors.LinkPickerOptions label {
+  display: block;
   width: 400px;
   padding-left: 0;
 }
@@ -191,6 +205,20 @@
 }
 .SkybrudPropertyEditors.LinkPickerOptions .value label + label {
   margin-left: 10px;
+}
+.umb-editor-sub-views .SkybrudPropertyEditors.LinkPickerOptions .option {
+  display: block;
+}
+.umb-editor-sub-views .SkybrudPropertyEditors.LinkPickerOptions .option label {
+  margin-bottom: 10px;
+  width: auto;
+}
+.SkybrudPropertyEditors.LinkPickerOptions.umbraco-gte76 .optionGroup .optionGroupTitle {
+  margin-bottom: 20px;
+  background: #F3F3F5;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #B3AFBD;
 }
 .SkybrudPropertyEditors .linkpicker-sortable-placeholder {
   border: inherit;

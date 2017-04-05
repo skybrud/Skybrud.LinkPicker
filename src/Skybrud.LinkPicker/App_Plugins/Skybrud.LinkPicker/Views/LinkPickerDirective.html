@@ -62,7 +62,7 @@
             </a>
         </div>
     </div>
-    <div ng-show="config.view == 'details'">
+    <div ng-show="config.view == 'preview'">
         <div ui-sortable="sortableOptionsPreview" ng-model="value.items">
             <div class="linkpicker-preview linkpicker-preview--sortable" ng-clggass="{'linkpicker-preview--sortable': sortable, 'linkpicker-preview--unpublished': published === false }" ng-repeat="link in value.items">
                 <i class="linkpicker-preview__icon icon-document" ng-if="link.mode == 'content'"></i>
