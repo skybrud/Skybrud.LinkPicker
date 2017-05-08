@@ -230,7 +230,7 @@
 .SkybrudPropertyEditors .ui-sortable-helper {
   display: none;
 }
-.SkybrudPropertyEditors .list .ui-sortable-helper {
+.SkybrudPropertyEditors .linkpicker-list .ui-sortable-helper {
   display: initial;
 }
 .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker label {
@@ -255,7 +255,7 @@
 .umb-grid .umb-control.-active .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker {
   padding: 10px;
 }
-.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .list .ui-sortable-helper {
+.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .linkpicker-list .ui-sortable-helper {
   width: initial !important;
   height: initial !important;
   padding: 0;
@@ -267,15 +267,19 @@
   box-shadow: none;
   visibility: visible !important;
 }
-.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .list .ui-sortable-helper * {
+.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .linkpicker-list .ui-sortable-helper * {
   display: initial;
 }
-.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .list .ui-sortable-helper:after {
+.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .linkpicker-list .ui-sortable-helper:after {
   display: none;
 }
-.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .list .ui-sortable-placeholder {
+.umb-grid .SkybrudPropertyEditors.SkybrudGridEditors.LinkPicker .linkpicker-list .ui-sortable-placeholder {
   background: transparent;
   height: 21px;
   position: static;
   margin: 0;
+}
+.umb-modal .SkybrudPropertyEditors.LinkPicker .linkpicker-preview,
+.umb-modal .SkybrudPropertyEditors.LinkPicker .linkpicker-preview-add {
+  max-width: initial;
 }

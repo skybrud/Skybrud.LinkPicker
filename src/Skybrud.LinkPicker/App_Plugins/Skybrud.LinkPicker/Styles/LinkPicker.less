@@ -115,7 +115,7 @@
         display: none;
     }
 
-    .list {
+    .linkpicker-list {
         .ui-sortable-helper {
             display: initial;
         }
@@ -153,7 +153,7 @@
         }
     }
     @{GridCssSelector} {
-        .list {
+        .linkpicker-list {
             .ui-sortable-helper {
                 width: initial !important;
                 height: initial !important;
@@ -182,12 +182,8 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
+// Fix so the editors takes full width if in a dialog (eg. LeBlender)
+.umb-modal .SkybrudPropertyEditors.LinkPicker .linkpicker-preview,
+.umb-modal .SkybrudPropertyEditors.LinkPicker .linkpicker-preview-add {
+    max-width: initial;
+}
