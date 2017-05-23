@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.Essentials.Json.Extensions;
+using Skybrud.LinkPicker.Json.Converters;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
@@ -10,6 +11,7 @@ namespace Skybrud.LinkPicker {
     /// <summary>
     /// Class representing a single link item.
     /// </summary>
+    [JsonConverter(typeof(LinkPickerConverter))]
     public class LinkPickerItem {
 
         private string _url;

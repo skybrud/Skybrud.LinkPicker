@@ -3,12 +3,14 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.Essentials.Json.Extensions;
+using Skybrud.LinkPicker.Json.Converters;
 
 namespace Skybrud.LinkPicker {
 
     /// <summary>
     /// Class representing the model for the LinkPicker editor.
     /// </summary>
+    [JsonConverter(typeof(LinkPickerConverter))]
     public class LinkPickerList {
 
         #region Properties
