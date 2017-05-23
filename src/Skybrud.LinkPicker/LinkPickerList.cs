@@ -81,7 +81,7 @@ namespace Skybrud.LinkPicker {
         protected LinkPickerList(JObject obj) {
             JObject = obj;
             Title = obj.GetString("title");
-            Items = (obj.GetArray("items", LinkPickerItem.Parse) ?? new LinkPickerItem[0]).Where(x => x.IsValid).ToArray();
+            Items = obj.GetArrayItems("items", LinkPickerItem.Parse);
         }
 
         /// <summary>
