@@ -317,6 +317,7 @@
     <Compile Include="Grid\Config\GridEditorLinkPickerConfig.cs" />
     <Compile Include="Json\Converters\LinkPickerConverter.cs" />
     <Compile Include="Json\Converters\LinkPickerEnumConverter.cs" />
+    <Compile Include="Json\Converters\LinkPickerItemConverter.cs" />
     <Compile Include="LinkPickerItem.cs" />
     <Compile Include="LinkPickerList.cs" />
     <Compile Include="LinkPickerMode.cs" />
