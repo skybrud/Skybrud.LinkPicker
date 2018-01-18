@@ -55,7 +55,15 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         }
 
         private bool IsLinkPickerEditor(GridEditor editor) {
-            return editor.Alias.ToLower() == "skybrud.linkpicker" || editor.Alias.ToLower().StartsWith("skybrud.linkpicker.");
+
+            // The editor may be NULL if it no longer exists in a package.manifest file
+            if (editor == null) return false;
+
+            const string alias = "Skybrud.LinkPicker";
+            const string view = "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html";
+
+            return ContainsIgnoreCase(editor.View.Split('?')[0], view) || EqualsIgnoreCase(editor.Alias, alias) || ContainsIgnoreCase(editor.Alias, alias + ".");
+
         }
     
     }
