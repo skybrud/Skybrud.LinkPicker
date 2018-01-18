@@ -46,9 +46,7 @@ namespace Skybrud.LinkPicker {
         /// available). The original URL as saved in Umbraco can be accessed through the <see cref="RawUrl"/> property.
         /// </summary>
         [JsonProperty("url")]
-        public string Url {
-            get { return _url ?? (_url = GetCalculatedUrl()); }
-        }
+        public string Url => _url ?? (_url = GetCalculatedUrl());
 
         /// <summary>
         /// Gets the link target.
@@ -66,9 +64,7 @@ namespace Skybrud.LinkPicker {
         /// Gets whether the link is valid.
         /// </summary>
         [JsonIgnore]
-        public bool IsValid {
-            get { return !String.IsNullOrWhiteSpace(Url); }
-        }
+        public bool IsValid => !String.IsNullOrWhiteSpace(Url);
 
         /// <summary>
         /// Gets the raw URL as saved in Umbraco. The URL may be wrong if referencing content or media that has been renamed, moved or similar.
@@ -112,6 +108,15 @@ namespace Skybrud.LinkPicker {
 
         #region Member methods
 
+        /// <summary>
+        /// Gets the calculated URL of the link. For <see cref="LinkPickerMode.Content"/> and
+        /// <see cref="LinkPickerMode.Media"/>, this means that we attempt to resolve the current URL using the content
+        /// cache and media cache respectively.
+        /// 
+        /// If <see cref="LinkPickerMode.Url"/>, or we can't find the content/mdia item in the cache,
+        /// <see cref="RawUrl"/> is returned instead.
+        /// </summary>
+        /// <returns>The calculated URL of the link, or <see cref="RawUrl"/> if calculating the current URL fails.</returns>
         protected virtual string GetCalculatedUrl() {
 
             // If we dont have a valid UmbracoContext (eg. during Examine indexing), we simply return the raw URL
@@ -139,7 +144,7 @@ namespace Skybrud.LinkPicker {
         #region Static methods
 
         /// <summary>
-        /// Parses the specified <code>obj</code> into an instance of <see cref="LinkPickerItem"/>.
+        /// Parses the specified <paramref name="obj"/> into an instance of <see cref="LinkPickerItem"/>.
         /// </summary>
         /// <param name="obj">The instance of <see cref="JObject"/> to be parsed.</param>
         public static LinkPickerItem Parse(JObject obj) {
@@ -179,9 +184,9 @@ namespace Skybrud.LinkPicker {
         /// Initializes a new link picker item from an instance of <see cref="IPublishedContent"/> representing a content item.
         /// </summary>
         /// <param name="content">An instance of <see cref="IPublishedContent"/> representing a content item.</param>
-        /// <returns>Returns the created <see cref="LinkPickerItem"/> instance.</returns>
+        /// <returns>The created <see cref="LinkPickerItem"/> instance.</returns>
         public static LinkPickerItem GetFromContent(IPublishedContent content) {
-            if (content == null) throw new ArgumentNullException("content");
+            if (content == null) throw new ArgumentNullException(nameof(content));
             return new LinkPickerItem {
                 Id = content.Id,
                 Name = content.Name,
@@ -195,9 +200,9 @@ namespace Skybrud.LinkPicker {
         /// Initializes a new link picker item from an instance of <see cref="IPublishedContent"/> representing a media item.
         /// </summary>
         /// <param name="media">An instance of <see cref="IPublishedContent"/> representing a media item.</param>
-        /// <returns>Returns the created <see cref="LinkPickerItem"/> instance.</returns>
+        /// <returns>The created <see cref="LinkPickerItem"/> instance.</returns>
         public static LinkPickerItem GetFromMedia(IPublishedContent media) {
-            if (media == null) throw new ArgumentNullException("media");
+            if (media == null) throw new ArgumentNullException(nameof(media));
             return new LinkPickerItem {
                 Id = media.Id,
                 Name = media.Name,
@@ -208,14 +213,15 @@ namespace Skybrud.LinkPicker {
         }
 
         /// <summary>
-        /// Initializes a new link picker item from the specified <code>url</code>, <code>name</code> and <code>target</code>.
+        /// Initializes a new link picker item from the specified <paramref name="url"/>, <paramref name="name"/> and
+        /// <paramref name="target"/>.
         /// </summary>
         /// <param name="url">The URL of the link.</param>
         /// <param name="name">The name (text) of the link.</param>
         /// <param name="target">The target of the link.</param>
-        /// <returns>Returns the created <see cref="LinkPickerItem"/> instance.</returns>
+        /// <returns>The created <see cref="LinkPickerItem"/> instance.</returns>
         public static LinkPickerItem GetFromUrl(string url, string name = null, string target = null) {
-            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentNullException("url");
+            if (String.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
             return new LinkPickerItem {
                 Name = name + "",
                 RawUrl = url,

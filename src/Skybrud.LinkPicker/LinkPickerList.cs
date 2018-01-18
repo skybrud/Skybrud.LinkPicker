@@ -19,7 +19,7 @@ namespace Skybrud.LinkPicker {
         /// Gets a reference to the <see cref="JObject"/> the link picker list was parsed from (if parsed from a JSON object).
         /// </summary>
         [JsonIgnore]
-        public JObject JObject { get; private set; }
+        public JObject JObject { get; }
 
         /// <summary>
         /// Gets the title of the control.
@@ -31,9 +31,7 @@ namespace Skybrud.LinkPicker {
         /// Gets whether the control has a title.
         /// </summary>
         [JsonIgnore]
-        public bool HasTitle {
-            get { return !String.IsNullOrWhiteSpace(Title); }
-        }
+        public bool HasTitle => !String.IsNullOrWhiteSpace(Title);
 
         /// <summary>
         /// Gets an array of all link items.
@@ -45,25 +43,19 @@ namespace Skybrud.LinkPicker {
         /// Gets whether the link picker list has any items.
         /// </summary>
         [JsonIgnore]
-        public bool HasItems {
-            get { return Items != null && Items.Length > 0; }
-        }
+        public bool HasItems => Items != null && Items.Length > 0;
 
         /// <summary>
         /// Gets the total amount of link items.
         /// </summary>
         [JsonProperty("count")]
-        public int Count {
-            get { return Items.Length; }
-        }
+        public int Count => Items.Length;
 
         /// <summary>
         /// Gets whether the link picker list is valid (alias of <see cref="HasItems"/>).
         /// </summary>
         [JsonIgnore]
-        public virtual bool IsValid {
-            get { return HasItems; }
-        }
+        public virtual bool IsValid => HasItems;
 
         #endregion
 
@@ -107,7 +99,7 @@ namespace Skybrud.LinkPicker {
         /// Parses the specified <see cref="JObject"/> into an instance of <see cref="LinkPickerList"/>.
         /// </summary>
         /// <param name="obj">An instance of <see cref="JObject"/> representing the link picker list.</param>
-        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <code>obj</code> is <code>null</code>.</returns>
+        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <paramref name="obj"/> is <code>null</code>.</returns>
         public static LinkPickerList Parse(JObject obj) {
             return obj == null ? null : new LinkPickerList(obj);
         }
@@ -116,7 +108,7 @@ namespace Skybrud.LinkPicker {
         /// Parses the specified <see cref="JArray"/> into an instance of <see cref="LinkPickerList"/>.
         /// </summary>
         /// <param name="array">An instance of <see cref="JArray"/> representing the link picker list.</param>
-        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <code>array</code> is <code>null</code>.</returns>
+        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <paramref name="array"/> is <code>null</code>.</returns>
         public static LinkPickerList Parse(JArray array) {
             return array == null ? null : new LinkPickerList(array);
         }
