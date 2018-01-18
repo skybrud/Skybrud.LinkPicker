@@ -6,3 +6,4 @@ src/Skybrud.LinkPicker/obj/
 src/Skybrud.LinkPicker/App_Data/NuGetBackup/
 node_modules/
 releases/temp/
+src/.vs/
