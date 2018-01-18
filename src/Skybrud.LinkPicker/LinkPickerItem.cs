@@ -223,6 +223,16 @@ namespace Skybrud.LinkPicker {
             };
         }
 
+        /// <summary>
+        /// Deseralizes the specified JSON string into an instance of <see cref="LinkPickerItem"/>.
+        /// </summary>
+        /// <param name="json">The raw JSON to be parsed.</param>
+        public static LinkPickerItem Deserialize(string json) {
+            if (json == null) return new LinkPickerItem();
+            if (json.StartsWith("{") && json.EndsWith("}")) return Parse(JsonConvert.DeserializeObject<JObject>(json));
+            return new LinkPickerItem();
+        }
+
         #endregion
 
     }
