@@ -2,12 +2,16 @@
 using Skybrud.LinkPicker.Grid.Config;
 using Skybrud.LinkPicker.Grid.Values;
 using Skybrud.Umbraco.GridData;
+using Skybrud.Umbraco.GridData.Converters;
 using Skybrud.Umbraco.GridData.Interfaces;
 using Skybrud.Umbraco.GridData.Rendering;
 
 namespace Skybrud.LinkPicker.Grid.Converters {
 
-    public class LinkPickerGridConverter : IGridConverter {
+    /// <summary>
+    /// Grid converter for the LinkPicker.
+    /// </summary>
+    public class LinkPickerGridConverter : GridConverterBase {
 
         /// <summary>
         /// Converts the specified <paramref name="token"/> into an instance of <see cref="IGridControlValue"/>.
@@ -15,7 +19,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         /// <param name="control">A reference to the parent <see cref="GridControl"/>.</param>
         /// <param name="token">The instance of <see cref="JToken"/> representing the control value.</param>
         /// <param name="value">The converted control value.</param>
-        public bool ConvertControlValue(GridControl control, JToken token, out IGridControlValue value) {
+        public override bool ConvertControlValue(GridControl control, JToken token, out IGridControlValue value) {
             value = null;
             if (IsLinkPickerEditor(control.Editor)) {
                 value = GridControlLinkPickerValue.Parse(control, token as JObject);
@@ -29,7 +33,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         /// <param name="editor"></param>
         /// <param name="token">The instance of <see cref="JToken"/> representing the editor config.</param>
         /// <param name="config">The converted editor config.</param>
-        public bool ConvertEditorConfig(GridEditor editor, JToken token, out IGridEditorConfig config) {
+        public override bool ConvertEditorConfig(GridEditor editor, JToken token, out IGridEditorConfig config) {
             config = null;
             if (IsLinkPickerEditor(editor)) {
                 config = GridEditorLinkPickerConfig.Parse(editor, token as JObject);
@@ -42,7 +46,7 @@ namespace Skybrud.LinkPicker.Grid.Converters {
         /// </summary>
         /// <param name="control">The control to be wrapped.</param>
         /// <param name="wrapper">The wrapper.</param>
-        public bool GetControlWrapper(GridControl control, out GridControlWrapper wrapper) {
+        public override bool GetControlWrapper(GridControl control, out GridControlWrapper wrapper) {
             wrapper = null;
             if (IsLinkPickerEditor(control.Editor)) {
                 wrapper = control.GetControlWrapper<GridControlLinkPickerValue, GridEditorLinkPickerConfig>();
