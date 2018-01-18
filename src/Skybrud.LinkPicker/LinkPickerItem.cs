@@ -79,8 +79,17 @@ namespace Skybrud.LinkPicker {
         #endregion
 
         #region Constructors
-
-        internal LinkPickerItem() { }
+        
+        /// <summary>
+        /// Initializes an empty link picker item.
+        /// </summary>
+        public LinkPickerItem() {
+            Id = 0;
+            Name = string.Empty;
+            RawUrl = string.Empty;
+            Target = "_self";
+            Mode = LinkPickerMode.Url;
+        }
 
         /// <summary>
         /// Initializes a new link picker item.
