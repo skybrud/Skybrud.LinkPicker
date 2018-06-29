@@ -1,24 +1,24 @@
-﻿angular.module('umbraco').directive('skybrudLinkpicker', ['dialogService', 'skybrudLinkPickerService', function (dialogService, p) {
+﻿angular.module("umbraco").directive("skybrudLinkpicker", ["dialogService", "skybrudLinkPickerService", function (dialogService, p) {
     return {
         scope: {
-            value: '=',
-            config: '='
+            value: "=",
+            config: "="
         },
         transclude: true,
-        restrict: 'E',
+        restrict: "E",
         replace: true,
-        templateUrl: '/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html?v=2',
+        templateUrl: "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html?v=2",
         link: function (scope) {
             
-            var v = Umbraco.Sys.ServerVariables.application.version.split('.');
-            scope.umbVersion = parseFloat(v[0] + '.' + (v[1].length === 1 ? "0" + v[1] : v[1]));
+            var v = Umbraco.Sys.ServerVariables.application.version.split(".");
+            scope.umbVersion = parseFloat(v[0] + "." + (v[1].length === 1 ? "0" + v[1] : v[1]));
 
             function initValue() {
 
                 // Initialize an empty model if no value at all
                 if (!scope.value) {
                     scope.value = {
-                        title: '',
+                        title: "",
                         items: []
                     };
                 }
@@ -26,14 +26,14 @@
                 // Convert the value if an array (legacy)
                 if (Array.isArray(scope.value)) {
                     scope.value = {
-                        title: '',
+                        title: "",
                         items: scope.value
                     };
                 }
 
                 // Set the "mode" property if not already present
                 scope.value.items.forEach(function (link) {
-                    if (!link.mode) link.mode = (link.id ? (link.url && link.url.indexOf('/media/') === 0 ? 'media' : 'content') : 'url');
+                    if (!link.mode) link.mode = (link.id ? (link.url && link.url.indexOf("/media/") === 0 ? "media" : "content") : "url");
                 });
 
             }
@@ -48,9 +48,9 @@
                 if (scope.cfg.types.url === undefined) scope.cfg.types.url = true;
                 if (scope.cfg.types.content === undefined) scope.cfg.types.content = true;
                 if (scope.cfg.types.media === undefined) scope.cfg.types.media = true;
-                if (scope.cfg.view == undefined) scope.cfg.view = 'preview';
-                if (scope.cfg.showTable === true) scope.cfg.view = 'table';
-                if (scope.cfg.showTable === false) scope.cfg.view = 'list';
+                if (scope.cfg.view == undefined) scope.cfg.view = "preview";
+                if (scope.cfg.showTable === true) scope.cfg.view = "table";
+                if (scope.cfg.showTable === false) scope.cfg.view = "list";
                 if (!scope.cfg.columns) scope.cfg.columns = {};
                 if (scope.cfg.columns.type === undefined) scope.cfg.columns.type = true;
                 if (scope.cfg.columns.content === undefined) scope.cfg.columns.content = true;
@@ -91,7 +91,7 @@
                 };
 
                 // Set the ID if "mode" is "content"
-                if (link.id && link.mode == 'content') {
+                if (link.id && link.mode === "content") {
                     target.id = link.id;
                 }
 
@@ -112,42 +112,36 @@
                     }
                 };
 
-
-
-
-                //p.editLink(link, function (newLink) {
-                //    scope.value.items[index] = newLink;
-                //}, closeAllDialogs);
             };
 
             scope.removeLink = function (index) {
                 var temp = [];
                 for (var i = 0; i < scope.value.items.length; i++) {
-                    if (index != i) temp.push(scope.value.items[i]);
+                    if (index !== i) temp.push(scope.value.items[i]);
                 }
                 scope.value.items = temp;
             };
 
             scope.sortableOptions = {
-                axis: 'y',
-                cursor: 'move',
-                handle: '.handle',
-                tolerance: 'pointer',
-                placeholder: 'linkpicker-sortable-placeholder',
-                containment: 'parent'
+                axis: "y",
+                cursor: "move",
+                handle: ".handle",
+                tolerance: "pointer",
+                placeholder: "linkpicker-sortable-placeholder",
+                containment: "parent"
             };
 
             scope.sortableOptionsList = {
-                axis: 'y',
-                cursor: 'move',
-                handle: '.handle',
-                tolerance: 'pointer',
-                containment: 'parent'
+                axis: "y",
+                cursor: "move",
+                handle: ".handle",
+                tolerance: "pointer",
+                containment: "parent"
             };
 
             scope.sortableOptionsPreview = {
                 distance: 10,
-                tolerance: 'pointer',
+                tolerance: "pointer",
                 scroll: true,
                 zIndex: 6000,
                 disabled: false
