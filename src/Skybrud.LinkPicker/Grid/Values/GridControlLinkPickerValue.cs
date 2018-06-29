@@ -13,15 +13,13 @@ namespace Skybrud.LinkPicker.Grid.Values {
         /// <summary>
         /// Gets a reference to the parent control.
         /// </summary>
-        public GridControl Control { get; private set; }
+        public GridControl Control { get; }
 
         /// <summary>
         /// Gets whether the link picker list is valid (alias of <see cref="LinkPickerList.HasItems"/>).
         /// </summary>
         [JsonIgnore]
-        public override bool IsValid {
-            get { return HasItems; }
-        }
+        public override bool IsValid => HasItems;
 
         #endregion
 

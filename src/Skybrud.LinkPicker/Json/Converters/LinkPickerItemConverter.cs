@@ -7,7 +7,7 @@ namespace Skybrud.LinkPicker.Json.Converters {
     /// <summary>
     /// JSON converter specifically for serializing and deserializing instances of <see cref="LinkPickerItem" />. This
     /// converter differs from <see cref="LinkPickerConverter" /> as this converter will serialize an invalid
-    /// <see cref="LinkPickerItem" /> to <code>null</code>.
+    /// <see cref="LinkPickerItem" /> to <c>null</c>.
     /// </summary>
     public class LinkPickerItemConverter : JsonConverter {
         
@@ -53,7 +53,7 @@ namespace Skybrud.LinkPicker.Json.Converters {
         /// Determines whether this instance can convert the specified <paramref name="objectType"/>.
         /// </summary>
         /// <param name="objectType">Type of the object.</param>
-        /// <returns><code>true</code> if this instance can convert the specified object type; otherwise <code>false</code>.</returns>
+        /// <returns><c>true</c> if this instance can convert the specified object type; otherwise <c>false</c>.</returns>
         public override bool CanConvert(Type objectType){
             return objectType == typeof(LinkPickerItem);
         }

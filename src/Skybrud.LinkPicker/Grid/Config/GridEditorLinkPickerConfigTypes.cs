@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Skybrud.Essentials.Json.Extensions;
 using Skybrud.Umbraco.GridData.Json;
 
@@ -12,11 +11,11 @@ namespace Skybrud.LinkPicker.Grid.Config {
 
         #region Properties
 
-        public bool Url { get; private set; }
+        public bool Url { get; }
 
-        public bool Content { get; private set; }
+        public bool Content { get; }
 
-        public bool Media { get; private set; }
+        public bool Media { get; }
 
         #endregion
 

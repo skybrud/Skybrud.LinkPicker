@@ -11,15 +11,15 @@ namespace Skybrud.LinkPicker.Grid.Config {
 
         #region Properties
 
-        public bool Type { get; private set; }
+        public bool Type { get; }
 
-        public bool Id { get; private set; }
+        public bool Id { get; }
 
-        public bool Name { get; private set; }
+        public bool Name { get; }
 
-        public bool Url { get; private set; }
+        public bool Url { get; }
 
-        public bool Target { get; private set; }
+        public bool Target { get; }
 
         #endregion
 

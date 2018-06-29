@@ -99,7 +99,7 @@ namespace Skybrud.LinkPicker {
         /// Parses the specified <see cref="JObject"/> into an instance of <see cref="LinkPickerList"/>.
         /// </summary>
         /// <param name="obj">An instance of <see cref="JObject"/> representing the link picker list.</param>
-        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <paramref name="obj"/> is <code>null</code>.</returns>
+        /// <returns>An instacne of <see cref="LinkPickerList"/>, or <c>null</c> if <paramref name="obj"/> is <c>null</c>.</returns>
         public static LinkPickerList Parse(JObject obj) {
             return obj == null ? null : new LinkPickerList(obj);
         }
@@ -108,7 +108,7 @@ namespace Skybrud.LinkPicker {
         /// Parses the specified <see cref="JArray"/> into an instance of <see cref="LinkPickerList"/>.
         /// </summary>
         /// <param name="array">An instance of <see cref="JArray"/> representing the link picker list.</param>
-        /// <returns>Returns an instacne of <see cref="LinkPickerList"/>, or <code>null</code> if <paramref name="array"/> is <code>null</code>.</returns>
+        /// <returns>An instacne of <see cref="LinkPickerList"/>, or <c>null</c> if <paramref name="array"/> is <c>null</c>.</returns>
         public static LinkPickerList Parse(JArray array) {
             return array == null ? null : new LinkPickerList(array);
         }

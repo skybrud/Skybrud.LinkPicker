@@ -22,7 +22,7 @@ namespace Skybrud.LinkPicker.Extensions {
         /// <returns>An instance of <see cref="LinkPickerItem"/>.</returns>
         public static LinkPickerItem GetLinkPickerItem(this IPublishedContent content, string propertyAlias) {
             LinkPickerList list = content.GetPropertyValue(propertyAlias) as LinkPickerList;
-            LinkPickerItem item = (list == null ? null : list.Items.FirstOrDefault());
+            LinkPickerItem item = list?.Items.FirstOrDefault();
             return item ?? new LinkPickerItem();
         }
 
@@ -37,7 +37,7 @@ namespace Skybrud.LinkPicker.Extensions {
         /// <param name="propertyAlias">The alias of the property.</param>
         /// <returns>An instance of <see cref="LinkPickerList"/>.</returns>
         public static LinkPickerList GetLinkPickerList(this IPublishedContent content, string propertyAlias) {
-            return (content == null ? null : content.GetPropertyValue<LinkPickerList>(propertyAlias)) ?? new LinkPickerList {
+            return content?.GetPropertyValue<LinkPickerList>(propertyAlias) ?? new LinkPickerList {
                 Items = new LinkPickerItem[0]
             };
         }

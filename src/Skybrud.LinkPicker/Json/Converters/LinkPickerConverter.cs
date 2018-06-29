@@ -9,9 +9,7 @@ namespace Skybrud.LinkPicker.Json.Converters {
     /// </summary>
     public class LinkPickerConverter : JsonConverter {
 
-        public override bool CanWrite {
-            get { return false; }
-        }
+        public override bool CanWrite => false;
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
 

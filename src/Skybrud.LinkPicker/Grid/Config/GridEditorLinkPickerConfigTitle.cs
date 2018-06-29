@@ -15,31 +15,27 @@ namespace Skybrud.LinkPicker.Grid.Config {
         /// <summary>
         /// Gets whether the title of the link picker list should be shown.
         /// </summary>
-        public bool Show { get; private set; }
+        public bool Show { get; }
 
         /// <summary>
         /// Gets the placeholder title of the link picker.
         /// </summary>
-        public string Placeholder { get; private set; }
+        public string Placeholder { get; }
 
         /// <summary>
         /// Gets whether the <see cref="Placeholder"/> property has a value.
         /// </summary>
-        public bool HasPlaceholder {
-            get { return !String.IsNullOrWhiteSpace(Placeholder); }
-        }
+        public bool HasPlaceholder => !String.IsNullOrWhiteSpace(Placeholder);
 
         /// <summary>
         /// Gets the default (fallback) title of the link picker.
         /// </summary>
-        public string Default { get; private set; }
+        public string Default { get; }
 
         /// <summary>
         /// Gets whether the <see cref="Default"/> property has a value.
         /// </summary>
-        public bool HasDefault {
-            get { return !String.IsNullOrWhiteSpace(Default); }
-        }
+        public bool HasDefault => !String.IsNullOrWhiteSpace(Default);
 
         #endregion
 

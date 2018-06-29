@@ -25,7 +25,7 @@ namespace Skybrud.LinkPicker {
         public JObject JObject { get; private set; }
 
         /// <summary>
-        /// Gets the ID of the selected content or media. If an URL has been selected, this will return <code>0</code>.
+        /// Gets the ID of the selected content or media. If an URL has been selected, this will return <c>0</c>.
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; private set; }

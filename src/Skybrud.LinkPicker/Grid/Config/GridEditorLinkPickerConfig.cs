@@ -12,15 +12,15 @@ namespace Skybrud.LinkPicker.Grid.Config {
 
         #region Properties
 
-        public GridEditorLinkPickerConfigTitle Title { get; private set; }
+        public GridEditorLinkPickerConfigTitle Title { get; }
 
-        public int Limit { get; private set; }
+        public int Limit { get; }
 
-        public GridEditorLinkPickerConfigTypes Types { get; private set; }
+        public GridEditorLinkPickerConfigTypes Types { get; }
 
-        public bool ShowTable { get; private set; }
+        public bool ShowTable { get; }
 
-        public GridEditorLinkPickerConfigColumns Columns { get; private set; }
+        public GridEditorLinkPickerConfigColumns Columns { get; }
 
 
         #endregion
