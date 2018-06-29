@@ -23,7 +23,7 @@
             var closeAllDialogs = !ancestorHasClass(element[0], 'umb-modal');
 
             var v = Umbraco.Sys.ServerVariables.application.version.split('.');
-            scope.umbVersion = parseFloat(v[0] + '.' + v[1]);
+            scope.umbVersion = parseFloat(v[0] + '.' + (v[1].length === 1 ? "0" + v[1] : v[1]));
 
             function initValue() {
 
