@@ -7,21 +7,9 @@
         transclude: true,
         restrict: 'E',
         replace: true,
-        templateUrl: '/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html',
-        link: function (scope, element) {
-
-            function ancestorHasClass(e, className) {
-                var p = e.parentNode;
-                while (p != null) {
-                    if (p.classList && p.classList.contains(className)) return true;
-                    p = p.parentNode;
-                }
-                return false;
-            }
-
-            // Determine wether the link picker dialog should close all other dialogs (it shouldn't when already in another dialog/modal)
-            var closeAllDialogs = !ancestorHasClass(element[0], 'umb-modal');
-
+        templateUrl: '/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html?v=2',
+        link: function (scope) {
+            
             var v = Umbraco.Sys.ServerVariables.application.version.split('.');
             scope.umbVersion = parseFloat(v[0] + '.' + (v[1].length === 1 ? "0" + v[1] : v[1]));
 
@@ -74,15 +62,62 @@
             }
 
             scope.addLink = function () {
-                p.addLink(function (link) {
-                    scope.value.items.push(link);
-                }, closeAllDialogs);
+
+                // Open Umbraco's link picker overlay
+                scope.linkPickerOverlay = {
+                    view: "linkpicker",
+                    show: true,
+                    submit: function (model) {
+
+                        // Append the link to the list
+                        scope.value.items.push(p.parseUmbracoLink(model.target));
+
+                        // Hide/reset the overlay
+                        scope.linkPickerOverlay.show = false;
+                        scope.linkPickerOverlay = null;
+
+                    }
+                };
+
             };
 
             scope.editLink = function (link, index) {
-                p.editLink(link, function (newLink) {
-                    scope.value.items[index] = newLink;
-                }, closeAllDialogs);
+
+                // Set the target based on "link"
+                var target = {
+                    name: link.name,
+                    url: link.url,
+                    target: link.target
+                };
+
+                // Set the ID if "mode" is "content"
+                if (link.id && link.mode == 'content') {
+                    target.id = link.id;
+                }
+
+                // Open Umbraco's link picker overlay
+                scope.linkPickerOverlay = {
+                    view: "linkpicker",
+                    currentTarget: target,
+                    show: true,
+                    submit: function (model) {
+
+                        // Append the link to the list
+                        scope.value.items[index] = p.parseUmbracoLink(model.target);
+
+                        // Hide/reset the overlay
+                        scope.linkPickerOverlay.show = false;
+                        scope.linkPickerOverlay = null;
+
+                    }
+                };
+
+
+
+
+                //p.editLink(link, function (newLink) {
+                //    scope.value.items[index] = newLink;
+                //}, closeAllDialogs);
             };
 
             scope.removeLink = function (index) {
