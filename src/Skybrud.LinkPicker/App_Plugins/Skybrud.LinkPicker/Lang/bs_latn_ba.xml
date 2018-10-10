@@ -8,8 +8,8 @@
     <key alias="url">Url</key>
     <key alias="target">Target</key>
     <key alias="editLink">Izmijeni</key>
-    <key alias="removeLink">Obrisi</key>
-    <key alias="targetBlank">novi tab/window</key>
+    <key alias="removeLink">Obriši</key>
+    <key alias="targetBlank">novi tab/prozor</key>
     <key alias="content">Sadržaj</key>
     <key alias="media">Media</key>
   </area>
