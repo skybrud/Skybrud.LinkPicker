@@ -286,9 +286,13 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerGridEditor.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Controllers\LinkPickerPreValues.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Directives\LinkPicker.js" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\bs_latn_ba.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\da-DK.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\en-GB.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\en-US.xml" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\hr-HR.xml" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\sr-Cyrl-BA.xml" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\Lang\sr-Cyrl-CS.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Services\LinkPickerService.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\LinkPicker.css">
       <DependentUpon>LinkPicker.less</DependentUpon>
