@@ -115,3 +115,23 @@
     }
 
 }
+
+
+
+
+@{PreviewPrefix}__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60%;
+}
+
+
+.umb-overlay & @{PreviewPrefix},
+.umb-overlay & @{PreviewPrefix}-add {
+    max-width: initial;
+}
+
+.umb-overlay & @{PreviewPrefix}__name {
+    max-width: 275px;
+}

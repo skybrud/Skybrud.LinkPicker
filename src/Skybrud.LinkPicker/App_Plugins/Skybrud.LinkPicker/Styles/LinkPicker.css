@@ -160,6 +160,19 @@
 .SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview__action--red:hover {
   color: #fe3e39;
 }
+.SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview,
+.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview-add {
+  max-width: initial;
+}
+.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name {
+  max-width: 275px;
+}
 .SkybrudPropertyEditors.LinkPickerOptions .optionGroup .optionGroupTitle {
   margin-bottom: 20px;
   background: #f8f8f8;

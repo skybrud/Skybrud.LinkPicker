@@ -333,6 +333,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\_preview.less" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="LICENSE.html" />
     <Content Include="packages.config" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
