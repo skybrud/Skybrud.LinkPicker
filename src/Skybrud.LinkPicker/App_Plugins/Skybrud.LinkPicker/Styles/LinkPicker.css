@@ -126,9 +126,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: flex-end;
 }
 .SkybrudPropertyEditors.LinkPicker .linkpicker-preview__action {
   margin-right: 5px;
@@ -160,17 +161,25 @@
 .SkybrudPropertyEditors.LinkPicker .umbraco-gte76 .linkpicker-preview__action--red:hover {
   color: #fe3e39;
 }
-.SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name {
+.SkybrudPropertyEditors.LinkPicker .linkpicker-preview__content {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 60%;
+  max-width: 80%;
+}
+.SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name,
+.SkybrudPropertyEditors.LinkPicker .linkpicker-preview__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 98%;
 }
 .umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview,
 .umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview-add {
   max-width: initial;
 }
-.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name {
+.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview__name,
+.umb-overlay .SkybrudPropertyEditors.LinkPicker .linkpicker-preview__description {
   max-width: 275px;
 }
 .SkybrudPropertyEditors.LinkPickerOptions .optionGroup .optionGroupTitle {

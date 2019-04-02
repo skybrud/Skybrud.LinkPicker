@@ -69,9 +69,10 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: flex-end;
 }
 
 @{PreviewPrefix}__action {
@@ -119,19 +120,27 @@
 
 
 
-@{PreviewPrefix}__name {
+@{PreviewPrefix}__content {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 60%;
+    max-width: 80%;
 }
 
+@{PreviewPrefix}__name,
+@{PreviewPrefix}__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 98%;
+}
 
 .umb-overlay & @{PreviewPrefix},
 .umb-overlay & @{PreviewPrefix}-add {
     max-width: initial;
 }
 
-.umb-overlay & @{PreviewPrefix}__name {
+.umb-overlay & @{PreviewPrefix}__name,
+.umb-overlay & @{PreviewPrefix}__description {
     max-width: 275px;
 }
