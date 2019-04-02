@@ -8,7 +8,8 @@
                 name: e.name || '',
                 url: e.url,
                 target: e.target || '_self',
-                mode: (e.id ? (e.isMedia ? 'media' : 'content') : 'url')
+                mode: (e.id ? (e.isMedia ? 'media' : 'content') : 'url'),
+                anchor: e.anchor || ""
             };
         },
 

@@ -7,7 +7,7 @@
         transclude: true,
         restrict: "E",
         replace: true,
-        templateUrl: "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html?v=2",
+        templateUrl: "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerDirective.html?v=3",
         link: function (scope) {
             
             var v = Umbraco.Sys.ServerVariables.application.version.split(".");
@@ -87,7 +87,8 @@
                 var target = {
                     name: link.name,
                     url: link.url,
-                    target: link.target
+                    target: link.target,
+                    anchor: link.anchor
                 };
 
                 // Set the ID if "mode" is "content"

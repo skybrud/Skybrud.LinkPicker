@@ -46,7 +46,7 @@ namespace Skybrud.LinkPicker {
         /// available). The original URL as saved in Umbraco can be accessed through the <see cref="RawUrl"/> property.
         /// </summary>
         [JsonProperty("url")]
-        public string Url => _url ?? (_url = GetCalculatedUrl());
+        public string Url => _url ?? (_url = GetCalculatedUrl() + Anchor);
 
         /// <summary>
         /// Gets the link target.
@@ -59,6 +59,12 @@ namespace Skybrud.LinkPicker {
         /// </summary>
         [JsonProperty("mode")]
         public LinkPickerMode Mode { get; private set; }
+
+        /// <summary>
+        /// Gets the anchor or query string specified by the editor.
+        /// </summary>
+        [JsonIgnore]
+        public string Anchor { get; private set; }
 
         /// <summary>
         /// Gets whether the link is valid.
@@ -85,6 +91,7 @@ namespace Skybrud.LinkPicker {
             RawUrl = string.Empty;
             Target = "_self";
             Mode = LinkPickerMode.Url;
+            Anchor = string.Empty;
         }
 
         /// <summary>
@@ -102,6 +109,7 @@ namespace Skybrud.LinkPicker {
             RawUrl = url;
             Target = target;
             Mode = mode;
+            Anchor = string.Empty;
         }
 
         #endregion
@@ -175,6 +183,7 @@ namespace Skybrud.LinkPicker {
                 Name = obj.GetString("name"),
                 RawUrl = obj.GetString("url"),
                 Target = obj.GetString("target"),
+                Anchor = obj.GetString("anchor"),
                 Mode = mode
             };
 
