@@ -2,7 +2,7 @@
 
     function parseUmbracoLink(link) {
         if (!link) return null;
-        link.type = link.isMedia ? "media" : link.id > 0 ? "content" : "url";
+        link.type = (link.isMedia ? "media" : link.id > 0 ? "content" : "url");
         delete link.isMedia;
         return link;
     }
@@ -32,7 +32,7 @@
         });
     };
 
-    $scope.removeLink = function () {
+    $scope.removeLink = function() {
         $scope.model.value = null;
     };
 
