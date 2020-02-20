@@ -13,10 +13,8 @@
 }
 .linkpicker-preview {
   display: flex;
-  padding: 5px 15px;
   padding: 5px 0;
   margin-bottom: 5px;
-  background: #F6F4F4;
   background: #fff;
   border-radius: 3px;
   box-sizing: border-box;
@@ -104,7 +102,7 @@
 .umb-overlay  .linkpicker-preview__description {
   max-width: 275px;
 }
-.linkpicker-sortable-placeholder {
+.skybrud-elements-links .linkpicker-sortable-placeholder {
   border: inherit;
   background-color: #d0e7f1 !important;
   font-size: 14px;
@@ -115,11 +113,33 @@
 .linkpicker-preview__aria-label {
   color: red;
 }
-.ng-invalid-required .linkpicker-preview__aria-label {
+.ng-invalid-required .linkpicker-preview-label {
   background: #D42054;
   color: #fff;
   padding: 0 2px;
 }
-.ng-invalid-required .linkpicker-preview__aria-label small {
+.ng-invalid-required .linkpicker-preview-label small {
   color: #fff;
+}
+.linkpicker-preview {
+  padding: 5px 15px;
+  padding: 5px 10px;
+  background: #F6F4F4;
+  background: #F3F3F5;
+}
+.skybrud-elements-links details {
+  display: none;
+  margin: 10px 0;
+  background: #F3F3F5;
+  padding: 10px;
+}
+.skybrud-elements-links details summary {
+  margin: -10px;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 14px;
+}
+.skybrud-elements-links details pre {
+  margin: 5px 0 0 0;
+  background: #efefef;
 }

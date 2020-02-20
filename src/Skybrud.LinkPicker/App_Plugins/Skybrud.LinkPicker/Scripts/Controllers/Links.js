@@ -22,26 +22,33 @@
 
     $scope.addLink = function (ct) {
 
+        var linkProperty = _.first(_.filter(ct.propertyTypes, x => x.dataType.alias === "Skybrud.LinkPicker.Link"));
+        var textProperty = _.first(_.filter(ct.propertyTypes, x => x.alias === "text"));
+
+        if (!linkProperty) {
+            console.error("No property type found with editor 'Skybrud.LinkPicker.Link'");
+            return;
+        }
+
         editorService.linkPicker({
+            hideTarget: linkProperty.dataType.config && linkProperty.dataType.config && linkProperty.dataType.config.hideTarget === true,
             submit: function (model) {
 
+                // Close the overlay
+                editorService.close();
+
                 // Skip adding the item if the user didn't specify a valid link
-                if (!model.target || !model.target.url) {
-                    editorService.close();
-                    return;
-                }
+                if (!model.target || !model.target.url) return;
 
                 // Initialize the properties of the link item
                 var properties = {};
-                properties.link = parseUmbracoLink(model.target);
+                properties[linkProperty.alias] = parseUmbracoLink(model.target);
 
                 // Populate the text property if present
-                if (model.target.name) properties.text = model.target.name;
+                if (model.target.name && textProperty) properties[textProperty.alias] = model.target.name;
 
-                editorService.close();
-
-                // Add the item ("true" means the item should be opened for editing)
-                $scope.addItem(ct, properties, true);
+                // Add the item
+                $scope.addItemFromContentType(ct, properties);
 
             },
             close: function () {
