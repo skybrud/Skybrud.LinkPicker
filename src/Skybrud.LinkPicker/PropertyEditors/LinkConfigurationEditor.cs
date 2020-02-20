@@ -1,5 +1,4 @@
-﻿using System.Web.Security;
-using Umbraco.Core.PropertyEditors;
+﻿using Umbraco.Core.PropertyEditors;
 
 namespace Skybrud.LinkPicker.PropertyEditors {
 
