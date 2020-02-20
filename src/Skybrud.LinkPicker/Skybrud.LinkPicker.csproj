@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Skybrud.Essentials" Version="1.1.17" />
     <PackageReference Include="Skybrud.WebApi.Json" Version="1.0.4" />
+    <PackageReference Include="Skybrud.Umbraco.Elements" Version="1.0.0-alpha009" />
     <PackageReference Include="UmbracoCms.Web" Version="8.1.0" />
   </ItemGroup>
 
@@ -22,12 +22,6 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Default.less" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Skybrud.InnerContent">
-      <HintPath>..\..\..\Skybrud.InnerContent\src\Skybrud.InnerContent\bin\Debug\net472\Skybrud.InnerContent.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

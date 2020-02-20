@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Skybrud.InnerContent.PropertyEditors;
-using Umbraco.Core.Logging;
+﻿using Umbraco.Core.Logging;
 using Umbraco.Core.PropertyEditors;
 
 namespace Skybrud.LinkPicker.PropertyEditors {
