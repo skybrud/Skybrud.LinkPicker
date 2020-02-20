@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skybrud.LinkPicker", "Skybrud.LinkPicker\Skybrud.LinkPicker.csproj", "{C0C26341-3CF6-4C3C-89CA-9A732E3C9D6C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{77F7E6FD-3FE5-48BC-A6B2-971B9AF6ADEA}"
-	ProjectSection(SolutionItems) = preProject
-		WebEssentials-Settings.json = WebEssentials-Settings.json
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skybrud.LinkPicker", "Skybrud.LinkPicker\Skybrud.LinkPicker.csproj", "{EDAFFFCE-8CDC-4C5A-99A2-D2A8797374C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0C26341-3CF6-4C3C-89CA-9A732E3C9D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0C26341-3CF6-4C3C-89CA-9A732E3C9D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0C26341-3CF6-4C3C-89CA-9A732E3C9D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0C26341-3CF6-4C3C-89CA-9A732E3C9D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDAFFFCE-8CDC-4C5A-99A2-D2A8797374C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDAFFFCE-8CDC-4C5A-99A2-D2A8797374C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDAFFFCE-8CDC-4C5A-99A2-D2A8797374C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDAFFFCE-8CDC-4C5A-99A2-D2A8797374C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B251C187-BB80-4E20-AF1D-353AFCB7160B}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,31 @@
+﻿<div ng-controller="Skybrud.LinkPicker.Link.Controller">
+    <div ng-show="!model.value">
+        <a href="#" prevent-default ng-click="addLink()" class="linkpicker-preview-add">Add</a>
+    </div>
+    <div class="linkpicker-preview" ng-show="model.value">
+        <i class="linkpicker-preview__icon icon-document" ng-show="model.value.type == 'content'"></i>
+        <i class="linkpicker-preview__icon icon-umb-media" ng-show="model.value.type == 'media'"></i>
+        <i class="linkpicker-preview__icon icon-link" ng-show="model.value.type == 'url'"></i>
+        <div class="linkpicker-preview__content">
+            <div class="linkpicker-preview__name">
+                <a href="{{model.value.url}}" target="_blank" rel="noopener">{{model.value.name || model.value.url}}</a>
+                <small ng-if="model.value.target == '_blank'">(<localize key="linkpicker_targetBlank">new tab/window</localize>)</small>
+            </div>
+            <div class="linkpicker-preview__description">
+                <localize key="linkpicker_content" ng-show="model.value.type == 'content'">Content</localize>
+                <localize key="linkpicker_media" ng-show="model.value.type == 'media'">Media</localize>
+                <localize key="linkpicker_url" ng-show="model.value.type == 'url'">URL</localize>
+                <span ng-if="model.value.name">&bull; {{model.value.url}}{{model.value.anchor}}</span>
+            </div>
+        </div>
+        <div class="linkpicker-preview__actions">
+            <a class="linkpicker-preview__action" href="#" prevent-default="" ng-click="editLink()">
+                <localize key="linkpicker_editLink">Edit</localize>
+            </a>
+            <a class="linkpicker-preview__action linkpicker-preview__action--red" href="#" prevent-default="" ng-click="removeLink()">
+                <localize key="linkpicker_removeLink">Remove</localize>
+            </a>
+        </div>
+    </div>
+    <pre>{{model.value | json}}</pre>
+</div>

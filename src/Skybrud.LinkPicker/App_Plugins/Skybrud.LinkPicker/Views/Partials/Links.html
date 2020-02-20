@@ -1,0 +1,35 @@
+﻿<div ng-controller="Skybrud.LinkPicker.PartialView.Controller">
+    <div ui-sortable="sortableOptions" ng-model="value">
+        <div class="linkpicker-preview linkpicker-preview--sortable" ng-repeat="item in value">
+            <i class="linkpicker-preview__icon icon-document" ng-if="item.properties.link.type == 'content'"></i>
+            <i class="linkpicker-preview__icon icon-umb-media" ng-if="item.properties.link.type == 'media'"></i>
+            <i class="linkpicker-preview__icon icon-link" ng-if="item.properties.link.type == 'url'"></i>
+            <div class="linkpicker-preview__content">
+                <div class="linkpicker-preview__name">
+                    <a href="{{item.properties.link.url}}" target="_blank" rel="noopener">{{item.properties.text || item.properties.link.url}}</a>
+                    <small ng-if="item.properties.link.target == '_blank'">(<localize key="linkpicker_targetBlank">new tab/window</localize>)</small>
+                </div>
+                <div class="linkpicker-preview__description">
+                    <localize key="linkpicker_content" ng-show="item.properties.link.type == 'content'">Content</localize>
+                    <localize key="linkpicker_media" ng-show="item.properties.link.type == 'media'">Media</localize>
+                    <localize key="linkpicker_url" ng-show="item.properties.link.type == 'url'">URL</localize>
+                    <span ng-if="item.properties.text">&bull; {{item.properties.link.url}}{{item.properties.link.anchor}}</span>
+                </div>
+                <!--<input type="hidden" ng-model="ariaLabel" ng-required="true"/>-->
+            </div>
+            <div class="linkpicker-preview__actions">
+                <a class="linkpicker-preview__action" href="#" prevent-default="" ng-click="editItem(item)">
+                    <localize key="linkpicker_editLink">Edit</localize>
+                </a>
+                <a class="linkpicker-preview__action linkpicker-preview__action--red" href="#" prevent-default="" ng-click="removeItem($index)">
+                    <localize key="linkpicker_removeLink">Remove</localize>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="skybrud-inner-content-add">
+        <a ng-repeat="ct in contentTypes" href="" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)">
+            <div class="umb-child-selector__child-name -blue"><strong>Tilføj</strong></div>
+        </a>
+    </div>
+</div>
