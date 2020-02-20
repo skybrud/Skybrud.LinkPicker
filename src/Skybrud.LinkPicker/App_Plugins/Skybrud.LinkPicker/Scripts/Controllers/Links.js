@@ -14,7 +14,10 @@
         zIndex: 6000,
         disabled: false,
         containment: "parent",
-        placeholder: "linkpicker-sortable-placeholder"
+        placeholder: "linkpicker-sortable-placeholder",
+        stop: function() {
+            $scope.sync();
+        }
     };
 
     $scope.addLink = function (ct) {
