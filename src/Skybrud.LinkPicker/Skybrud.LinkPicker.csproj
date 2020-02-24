@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Skybrud.WebApi.Json" Version="1.0.4" />
     <PackageReference Include="Skybrud.Umbraco.Elements" Version="1.0.0-alpha009">
-      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>contentFiles</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="UmbracoCms.Web" Version="8.1.0">
       <PrivateAssets>all</PrivateAssets>
