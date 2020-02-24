@@ -12,4 +12,5 @@ namespace Skybrud.LinkPicker.PropertyEditors {
         protected override IConfigurationEditor CreateConfigurationEditor() => new LinkConfigurationEditor();
 
     }
+
 }
