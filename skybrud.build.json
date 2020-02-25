@@ -23,6 +23,12 @@
               "**/*.xml",
               "package.manifest"
             ]
+          },
+          {
+            "source": "src",
+            "patterns": [
+              "LICENSE.html"
+            ]
           }
         ]
       }

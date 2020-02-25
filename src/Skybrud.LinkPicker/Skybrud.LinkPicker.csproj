@@ -7,11 +7,22 @@
   <PropertyGroup>
     <Version>2.0.0-alpha001</Version>
     <Authors>Anders Bjerner</Authors>
-    <Copyright>Copyright © 2019</Copyright>
+    <Company>Skybrud.dk</Company>
+    <Description>Library with common purpose functionality for working with .NET.</Description>
+    <Copyright>Copyright © 2020</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Skybrud.LinkPicker</PackageId>
+    <PackageTags>Umbraco, Link, Picker, Media, Content, Url</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://packages.skybrud.dk/skybrud.linkpicker/</PackageProjectUrl>
+    <PackageIconUrl>http://www.skybrud.dk/img/5431sk/icon/favicon.ico</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/skybrud/Skybrud.LinkPicker</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Skybrud.WebApi.Json" Version="1.0.4" />
     <PackageReference Include="Skybrud.Umbraco.Elements" Version="1.0.0-alpha009">
       <ExcludeAssets>contentFiles</ExcludeAssets>
     </PackageReference>
@@ -25,7 +36,6 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.css" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.html" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
-    <Content Include="App_Plugins\Skybrud.LinkPicker\Styles\Default.less" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,5 +49,9 @@
       <DependentUpon>Default.css</DependentUpon>
     </Content>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(ConfigurationName)'=='Release' AND '$(BuildTools)'=='1'">
+    <Exec Command="&quot;$(ProjectDir)..\build\Skybrud.BuildTools.Tasks.exe&quot; &quot;postBuild&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectPath)&quot; &quot;$(TargetPath)&quot;" />
+  </Target>
 
 </Project>
