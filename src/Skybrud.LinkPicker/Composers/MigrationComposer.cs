@@ -8,7 +8,7 @@ namespace Skybrud.LinkPicker.Composers {
     public class MigrationComposer : IUserComposer {
         
         public void Compose(Composition composition) {
-            composition.Components().Append<MigrationComponent>();
+            //composition.Components().Append<MigrationComponent>();
         }
 
     }
