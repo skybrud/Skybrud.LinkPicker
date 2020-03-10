@@ -14,7 +14,7 @@ namespace Skybrud.LinkPicker.Models {
         [JsonIgnore]
         public string Udi { get; }
 
-        [JsonIgnore]
+        [JsonProperty("name")]
         public string Name { get; }
 
         [JsonProperty("url")]
