@@ -35,6 +35,7 @@
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.js" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.css" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.html" />
+    <Content Include="App_Plugins\Skybrud.LinkPicker\**\*.xml" />
     <Content Include="App_Plugins\Skybrud.LinkPicker\package.manifest" />
   </ItemGroup>
 
