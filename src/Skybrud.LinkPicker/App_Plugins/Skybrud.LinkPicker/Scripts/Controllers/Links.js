@@ -22,8 +22,8 @@
 
     $scope.addLink = function (ct) {
 
-        var linkProperty = _.first(_.filter(ct.propertyTypes, x => x.dataType.alias === "Skybrud.LinkPicker.Link"));
-        var textProperty = _.first(_.filter(ct.propertyTypes, x => x.alias === "text"));
+        var linkProperty = ct.getPropertyType(x => x.dataType.alias === "Skybrud.LinkPicker.Link");
+        var textProperty = ct.getPropertyType("text");
 
         if (!linkProperty) {
             console.error("No property type found with editor 'Skybrud.LinkPicker.Link'");
