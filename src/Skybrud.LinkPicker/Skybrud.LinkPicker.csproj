@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Skybrud.Umbraco.Elements" Version="1.0.0-alpha009">
+    <PackageReference Include="Skybrud.Umbraco.Elements" Version="1.0.0-alpha012">
       <ExcludeAssets>contentFiles</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="UmbracoCms.Web" Version="8.1.0">
