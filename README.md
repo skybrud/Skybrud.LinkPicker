@@ -21,13 +21,6 @@ Skybrud.LinkPicker is a small package that adds a single property editor to Umbr
 
 ![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)-->
 
-## Links
-
-- <a href="#installation">Installation</a>
-- <a href="#using-the-property-editor">Using the property editor</a>
-- <a href="#using-the-grid-editor">Using the grid editor</a>
-- <a href="#using-the-link-picker-in-your-own-projects">Using the link picker in your own projects</a>
-
 ## Installation
 
 1. [**NuGet Package**][NuGetPackage]  
