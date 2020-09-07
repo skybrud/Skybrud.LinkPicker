@@ -1,6 +1,8 @@
 ﻿<div ng-controller="Skybrud.LinkPicker.Link.Controller">
     <div ng-show="!model.value">
-        <a href="#" prevent-default ng-click="addLink()" class="linkpicker-preview-add">Add</a>
+        <a href="#" prevent-default ng-click="addLink()" class="linkpicker-preview-add">
+            <localize key="linkpicker_addLink">Add link</localize>
+        </a>
     </div>
     <div class="linkpicker-preview" ng-show="model.value">
         <i class="linkpicker-preview__icon icon-document" ng-show="model.value.type == 'content'"></i>
