@@ -2,8 +2,11 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.Essentials.Json.Extensions;
+using Skybrud.LinkPicker.PropertyEditors;
 using Umbraco.Core;
 using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
+using Umbraco.Web.Composing;
 
 namespace Skybrud.LinkPicker.Models {
 
@@ -36,14 +39,41 @@ namespace Skybrud.LinkPicker.Models {
 
         #region Constructors
 
-        public LinkPickerLink(JObject obj) {
+        public LinkPickerLink(JObject obj) : this(obj, Current.UmbracoContext, null) { }
+
+        internal LinkPickerLink(JObject obj, UmbracoContext context, LinkConfiguration config) {
+
+            // TODO: Should "Udi" property be of type Udi?
+
             Id = obj.GetInt32("id");
             Udi = obj.GetString("udi");
             Name = obj.GetString("name");
             Url = obj.GetString("url");
             Type = obj.GetEnum("type", LinkPickerType.Url);
+
+            GuidUdi udi = string.IsNullOrWhiteSpace(Udi) ? null : GuidUdi.Parse(Udi);
+            
+            switch (Type) {
+
+                // TODO: Update "Name" property as well if permitted by "config"
+
+                case LinkPickerType.Content: {
+                    var c = udi == null ? null : context?.Content.GetById(udi);
+                    if (c != null) Url = c.Url;
+                    break;
+                }
+
+                case LinkPickerType.Media: {
+                    var m = udi == null ? null : context?.Media.GetById(udi);
+                    if (m != null) Url = m.Url;
+                    break;
+                }
+
+            }
+
             Target = obj.GetString("target");
             Anchor = obj.GetString("anchor");
+
         }
 
         /// <summary>

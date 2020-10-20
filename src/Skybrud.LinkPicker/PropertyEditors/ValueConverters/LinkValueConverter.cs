@@ -4,10 +4,23 @@ using Skybrud.Essentials.Json;
 using Skybrud.LinkPicker.Models;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
+using Umbraco.Web;
 
 namespace Skybrud.LinkPicker.PropertyEditors.ValueConverters {
 
     public class LinkValueConverter : PropertyValueConverterBase {
+
+        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+        #region Constructors
+
+        public LinkValueConverter(IUmbracoContextAccessor umbracoContextAccessor) {
+            _umbracoContextAccessor = umbracoContextAccessor;
+        }
+
+        #endregion
+
+        #region Member methods
 
         public override bool IsConverter(IPublishedPropertyType propertyType) {
             return propertyType.EditorAlias == "Skybrud.LinkPicker.Link";
@@ -20,7 +33,7 @@ namespace Skybrud.LinkPicker.PropertyEditors.ValueConverters {
 
             JObject obj = JsonUtils.ParseJsonObject(str);
 
-            return new LinkPickerLink(obj);
+            return new LinkPickerLink(obj, _umbracoContextAccessor.UmbracoContext, propertyType.DataType.ConfigurationAs<LinkConfiguration>());
 
         }
         
@@ -39,6 +52,8 @@ namespace Skybrud.LinkPicker.PropertyEditors.ValueConverters {
         public override Type GetPropertyValueType(IPublishedPropertyType propertyType) {
             return typeof(LinkPickerLink);
         }
+
+        #endregion
 
     }
 
