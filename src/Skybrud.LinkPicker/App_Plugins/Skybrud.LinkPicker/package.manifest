@@ -4,6 +4,6 @@
   ],
   "javascript": [
     "/App_Plugins/Skybrud.LinkPicker/Scripts/Controllers/Link.js",
-    "/App_Plugins/Skybrud.LinkPicker/Scripts/Controllers/Links.js"
+    "/App_Plugins/Skybrud.LinkPicker/Scripts/Controllers/Elements/Links.js"
   ]
 }

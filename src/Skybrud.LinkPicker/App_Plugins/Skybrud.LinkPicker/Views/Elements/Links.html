@@ -1,4 +1,4 @@
-﻿<div class="skybrud-elements-links" ng-controller="Skybrud.LinkPicker.PartialView.Controller">
+﻿<div class="skybrud-elements-links" ng-controller="Skybrud.LinkPicker.Elements.Controller">
     <div ui-sortable="sortableOptions" ng-model="items">
         <div class="linkpicker-preview linkpicker-preview--sortable" ng-repeat="item in items">
             <i class="linkpicker-preview__icon icon-document" ng-if="item.value.properties.link.type == 'content'"></i>
@@ -44,4 +44,5 @@
         <summary>Items</summary>
         <pre style="font-size: 9px; line-height: 11px;">{{items | json}}</pre>
     </details>
+    <pre>{{items | json}}</pre>
 </div>
