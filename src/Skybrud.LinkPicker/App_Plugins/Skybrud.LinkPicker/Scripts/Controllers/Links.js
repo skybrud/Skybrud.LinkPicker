@@ -22,7 +22,7 @@
 
     $scope.addLink = function (ct) {
 
-        var linkProperty = ct.getPropertyType(x => x.dataType.alias === "Skybrud.LinkPicker.Link");
+        var linkProperty = ct.getPropertyType(x => x.editor === "Skybrud.LinkPicker.Link");
         var textProperty = ct.getPropertyType("text");
 
         if (!linkProperty) {
@@ -31,7 +31,7 @@
         }
 
         editorService.linkPicker({
-            hideTarget: linkProperty.dataType.config && linkProperty.dataType.config && linkProperty.dataType.config.hideTarget === true,
+            hideTarget: linkProperty.config && linkProperty.config.hideTarget === true,
             submit: function (model) {
 
                 // Close the overlay
