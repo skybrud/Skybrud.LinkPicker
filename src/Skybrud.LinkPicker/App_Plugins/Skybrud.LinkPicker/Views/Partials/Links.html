@@ -6,14 +6,14 @@
             <i class="linkpicker-preview__icon icon-link" ng-if="item.value.properties.link.type == 'url'"></i>
             <div class="linkpicker-preview__content">
                 <div class="linkpicker-preview__name">
-                    <a href="{{item.value.properties.link.url}}" target="_blank" rel="noopener">{{item.value.properties.text || item.value.properties.link.url}}</a>
+                    <a href="{{item.value.properties.link.url}}" target="_blank" rel="noopener">{{item.value.properties.text || item.value.properties.link.name || item.value.properties.link.url}}</a>
                     <small ng-if="item.value.properties.link.target == '_blank'">(<localize key="linkpicker_targetBlank">new tab/window</localize>)</small>
                 </div>
                 <div class="linkpicker-preview__description">
                     <localize key="linkpicker_content" ng-show="item.value.properties.link.type == 'content'">Content</localize>
                     <localize key="linkpicker_media" ng-show="item.value.properties.link.type == 'media'">Media</localize>
                     <localize key="linkpicker_url" ng-show="item.value.properties.link.type == 'url'">URL</localize>
-                    <span ng-if="item.value.properties.text">&bull; {{item.value.properties.link.url}}{{item.value.properties.link.anchor}}</span>
+                    <span ng-if="item.value.properties.text || item.value.properties.link.name">&bull; {{item.value.properties.link.url}}{{item.value.properties.link.anchor}}</span>
                 </div>
                 <!--<input type="hidden" ng-model="ariaLabel" ng-required="true"/>-->
             </div>
@@ -27,8 +27,8 @@
             </div>
         </div>
     </div>
-    <div class="skybrud-inner-content-add">
-        <a ng-repeat="ct in contentTypes" href="" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)" ng-show="items.length < config.maxItems">
+    <div class="skybrud-elements-add" ng-show="items.length < config.maxItems">
+        <a ng-repeat="ct in contentTypes" href="" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)">
             <div class="umb-child-selector__child-name -blue"><strong>Tilføj</strong></div>
         </a>
     </div>
