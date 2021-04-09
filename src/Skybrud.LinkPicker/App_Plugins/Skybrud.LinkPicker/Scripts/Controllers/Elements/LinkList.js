@@ -1,4 +1,4 @@
-﻿angular.module("umbraco").controller("Skybrud.LinkPicker.Elements.Controller", function ($scope, editorService) {
+﻿angular.module("umbraco").controller("Skybrud.LinkPicker.Elements.LinkList.Controller", function ($scope, editorService) {
 
     function parseUmbracoLink(link) {
         if (!link) return null;
