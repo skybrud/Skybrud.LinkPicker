@@ -18,19 +18,19 @@
                 <!--<input type="hidden" ng-model="ariaLabel" ng-required="true"/>-->
             </div>
             <div class="linkpicker-preview__actions">
-                <a class="linkpicker-preview__action" href="#" prevent-default="" ng-click="editItem(item)">
+                <button type="button" class="linkpicker-preview__action" href="#" ng-click="editItem(item)">
                     <localize key="linkpicker_editLink">Edit</localize>
-                </a>
-                <a class="linkpicker-preview__action linkpicker-preview__action--red" href="#" prevent-default="" ng-click="deleteItem($index)">
+                </button>
+                <button type="button" class="linkpicker-preview__action linkpicker-preview__action--red" ng-click="deleteItem($index)">
                     <localize key="linkpicker_removeLink">Remove</localize>
-                </a>
+                </button>
             </div>
         </div>
     </div>
     <div class="skybrud-elements-add" ng-show="items.length < config.maxItems">
-        <a ng-repeat="ct in contentTypes" href="" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)">
+        <button type="button" ng-repeat="ct in contentTypes" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)">
             <div class="umb-child-selector__child-name -blue"><strong>Tilføj</strong></div>
-        </a>
+        </button>
     </div>
     <details>
         <summary>Config</summary>

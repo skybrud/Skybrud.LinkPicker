@@ -69,6 +69,8 @@
   font-size: 13px;
   font-weight: bold;
   color: #817f85;
+  border: 0;
+  background: 0;
 }
 .linkpicker-preview__action:hover {
   color: #1b264f;
