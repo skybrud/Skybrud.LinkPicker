@@ -10,6 +10,7 @@
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
+  cursor: pointer;
 }
 .linkpicker-preview {
   display: flex;

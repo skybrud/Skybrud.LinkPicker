@@ -1,8 +1,8 @@
 ﻿<div ng-controller="Skybrud.LinkPicker.Link.Controller">
     <div ng-show="!model.value">
-        <a href="#" prevent-default ng-click="addLink()" class="linkpicker-preview-add">
+        <buttun type="button" ng-click="addLink()" class="linkpicker-preview-add">
             <localize key="linkpicker_addLink">Add link</localize>
-        </a>
+        </buttun>
     </div>
     <div class="linkpicker-preview" ng-show="model.value">
         <i class="linkpicker-preview__icon icon-document" ng-show="model.value.type == 'content'"></i>
@@ -21,12 +21,12 @@
             </div>
         </div>
         <div class="linkpicker-preview__actions">
-            <a class="linkpicker-preview__action" href="#" prevent-default="" ng-click="editLink()">
+            <button type="button" class="linkpicker-preview__action" ng-click="editLink()">
                 <localize key="linkpicker_editLink">Edit</localize>
-            </a>
-            <a class="linkpicker-preview__action linkpicker-preview__action--red" href="#" prevent-default="" ng-click="removeLink()">
+            </button>
+            <button type="button" class="linkpicker-preview__action linkpicker-preview__action--red" ng-click="removeLink()">
                 <localize key="linkpicker_removeLink">Remove</localize>
-            </a>
+            </button>
         </div>
     </div>
     <input type="hidden" ng-required="model.validation.mandatory" ng-model="model.value.type" />
