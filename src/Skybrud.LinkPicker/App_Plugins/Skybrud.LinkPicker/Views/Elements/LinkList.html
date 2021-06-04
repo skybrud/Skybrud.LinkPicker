@@ -29,7 +29,9 @@
     </div>
     <div class="skybrud-elements-add" ng-show="items.length < config.maxItems">
         <button type="button" ng-repeat="ct in contentTypes" class="umb-child-selector__child -placeholder" ng-click="addLink(ct)">
-            <div class="umb-child-selector__child-name -blue"><strong>Tilføj</strong></div>
+            <div class="umb-child-selector__child-name -blue">
+                <localize key="general_add">Add</localize>
+            </div>
         </button>
     </div>
     <details>
