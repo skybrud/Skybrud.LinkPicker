@@ -15,11 +15,10 @@ Skybrud.LinkPicker
 
 
 
-Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco 7 that can be used as either a single link picker or as a multi link picker depending on configuration.
+Skybrud.LinkPicker is a small package that adds a single property editor to Umbraco that can be used for picking a link - either being content, media or a custom URL.
 
-<!--Besides working like most other link pickers, it can also be configured to show a detailed list of the selected links (eg. as the table in the screenshot below).
-
-![Screenshot of Skybrud.LinkPicker](https://cloud.githubusercontent.com/assets/3634580/9728573/2ab5caf0-5609-11e5-87e8-d7585378107e.png)-->
+![image](https://user-images.githubusercontent.com/3634580/120788631-d6eeac00-c530-11eb-9ac0-7e1d02f97f0a.png)
+*The destination property shows the link picker editor in use. When clicking to add or edit a link, the editor utilizes Umbraco's build-in link picker overlay.*
 
 ## Installation
 
@@ -40,7 +39,7 @@ Grab a ZIP file of the latest release; unzip and move the contents to the root d
 
 If you've used the Umbraco 7 version of this package, you may recall that it featured a property editor for managing a list of links rather that a property editor for a single link as in the Umbraco 8.
 
-The the link list property editor, you could add all the links you wanted, but each item in the list would just be a link without the support for any additional properties. As Umbraco 7 matured, and Umbraco 8 came closer, we released this was limiting our capatabilities for building better websites - eg. a link could for instance include extra properties for improving the accessbility of a website, but this wasn't possible with the old link list property editor.
+With the link list property editor, you could add all the links you wanted, but each item in the list would just be a link without the support for any additional properties. As Umbraco 7 matured, and Umbraco 8 came closer, we released this was limiting our capatabilities for building better websites - eg. a link could for instance include extra properties for improving the accessbility of a website, but this wasn't possible with the old link list property editor.
 
 When we're building link lists in Umbraco 8, we're now instead relying on our own [**Skybrud.Umbraco.Elements**](https://github.com/skybrud/Skybrud.Umbraco.Elements) package. The package then allows developers to set up properties and grid elements based on content types and `IPublishedElement`.
 
@@ -52,7 +51,9 @@ To use the link list view provided by this package, you can set the **View** opt
 
 ![image](https://user-images.githubusercontent.com/3634580/85072388-59b01700-b1b9-11ea-8158-182e189af9d7.png)
 
+## Umbraco Block List
 
+The new Block List in Umbraco uses the same principles as our Elements editor described above. Ideally this package will also provide a custom view for the Block List in the future, making it more friendly to create and manage a link list with the block list.
 
 
 
