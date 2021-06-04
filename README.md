@@ -47,7 +47,7 @@ When we're building link lists in Umbraco 8, we're now instead relying on our ow
 
 In the GIF above, the link item has an additonal property for the link text, but other properties - like an icon - could make sense as well.
 
-To use the link list view provided by this package, you can set the **View** option to `/App_Plugins/Skybrud.LinkPicker/Views/Partials/Links.html` when creating your link list data type:
+To use the link list view provided by this package, you can set the **View** option to `/App_Plugins/Skybrud.LinkPicker/Views/Elements/LinkList.html` when creating your link list data type:
 
 ![image](https://user-images.githubusercontent.com/3634580/85072388-59b01700-b1b9-11ea-8158-182e189af9d7.png)
 
