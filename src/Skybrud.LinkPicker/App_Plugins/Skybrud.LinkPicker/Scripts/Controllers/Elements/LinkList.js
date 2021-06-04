@@ -22,8 +22,8 @@
 
     $scope.addLink = function (ct) {
 
-        var linkProperty = ct.getPropertyType(x => x.editor === "Skybrud.LinkPicker.Link");
-        var textProperty = ct.getPropertyType("text");
+        const linkProperty = ct.getPropertyType(x => x.editor === "Skybrud.LinkPicker.Link");
+        const textProperty = ct.getPropertyType("text") || ct.getPropertyType("linkText") || ct.getPropertyType("title");
 
         if (!linkProperty) {
             console.error("No property type found with editor 'Skybrud.LinkPicker.Link'");
@@ -41,7 +41,7 @@
                 if (!model.target || !model.target.url) return;
 
                 // Initialize the properties of the link item
-                var properties = {};
+                const properties = {};
                 properties[linkProperty.alias] = parseUmbracoLink(model.target);
 
                 // Populate the text property if present
