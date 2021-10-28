@@ -52,7 +52,7 @@ namespace Skybrud.LinkPicker.Tracking
             references.Add(new UmbracoEntityReference(udi));
         }
 
-        public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals("Skybrud.LinkPicker.Link")
+        public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals("Skybrud.LinkPicker.Link");
     }
 
 }
