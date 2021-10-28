@@ -2,6 +2,7 @@
 using Skybrud.LinkPicker.Models.Tracking;
 using System;
 using System.Collections.Generic;
+using Skybrud.LinkPicker.PropertyEditors;
 using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.Editors;
@@ -45,7 +46,7 @@ namespace Skybrud.LinkPicker.Tracking {
             references.Add(new UmbracoEntityReference(udi));
         }
 
-        public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals("Skybrud.LinkPicker.Link");
+        public bool IsForEditor(IDataEditor dataEditor) => dataEditor.Alias.InvariantEquals(LinkEditor.EditorAlias);
 
     }
 
