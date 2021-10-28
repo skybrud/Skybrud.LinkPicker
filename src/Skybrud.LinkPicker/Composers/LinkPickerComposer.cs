@@ -4,7 +4,7 @@ using Umbraco.Core.Composing;
 
 namespace Skybrud.LinkPicker.Composers {
     
-    public class LinkPickerComposer : IUserComposer {
+    internal class LinkPickerComposer : IUserComposer {
         
         public void Compose(Composition composition) {
             composition.DataValueReferenceFactories().Append<LinkReferenceFactory>();

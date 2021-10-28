@@ -7,7 +7,7 @@ using Umbraco.Core.PropertyEditors;
 
 namespace Skybrud.LinkPicker.Factories {
 
-    public class LinkReferenceFactory : IDataValueReferenceFactory, IDataValueReference {
+    internal class LinkReferenceFactory : IDataValueReferenceFactory, IDataValueReference {
 
         public IDataValueReference GetDataValueReference() => this;
 
