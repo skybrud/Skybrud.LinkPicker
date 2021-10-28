@@ -5,9 +5,9 @@ using Umbraco.Core;
 using Umbraco.Core.Models.Editors;
 using Umbraco.Core.PropertyEditors;
 
-namespace Skybrud.LinkPicker.Tracking {
+namespace Skybrud.LinkPicker.Factories {
 
-    public class LinkMediaTracking : IDataValueReferenceFactory, IDataValueReference {
+    public class LinkReferenceFactory : IDataValueReferenceFactory, IDataValueReference {
 
         public IDataValueReference GetDataValueReference() => this;
 
