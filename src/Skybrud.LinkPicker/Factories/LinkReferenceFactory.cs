@@ -12,7 +12,7 @@ namespace Skybrud.LinkPicker.Factories {
         public IDataValueReference GetDataValueReference() => this;
 
         public IEnumerable<UmbracoEntityReference> GetReferences(object value) {
-            
+
             List<UmbracoEntityReference> references = new List<UmbracoEntityReference>();
             if (value is not string json) return references;
 
@@ -22,15 +22,16 @@ namespace Skybrud.LinkPicker.Factories {
             switch (link.Type) {
 
                 case LinkPickerType.Content:
-                    references.Add(new UmbracoEntityReference(new GuidUdi("content", link.Key)));
+
+                    references.Add(new UmbracoEntityReference(new GuidUdi(Constants.UdiEntityType.Document, link.Key)));
                     break;
 
                 case LinkPickerType.Media:
-                    references.Add(new UmbracoEntityReference(new GuidUdi("media", link.Key)));
+                    references.Add(new UmbracoEntityReference(new GuidUdi(Constants.UdiEntityType.Media, link.Key)));
                     break;
-                
+
             }
-            
+
             return references;
 
         }
