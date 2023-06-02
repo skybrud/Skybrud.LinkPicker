@@ -24,7 +24,7 @@ namespace Skybrud.LinkPicker.PropertyEditors.ValueConverters {
         #region Member methods
 
         public override bool IsConverter(IPublishedPropertyType propertyType) {
-            return propertyType.EditorAlias == "Skybrud.LinkPicker.Link";
+            return propertyType.EditorAlias == LinkEditor.EditorAlias;
         }
 
         public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview) {
