@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>2.0.1</Version>
+    <VersionPrefix>2.0.2</VersionPrefix>
+    <VersionSuffix Condition="'$(Configuration)'=='Debug'">build$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
     <Authors>Anders Bjerner</Authors>
     <Company>Limbo</Company>
-    <Description>Library with common purpose functionality for working with .NET.</Description>
-    <Copyright>Copyright © 2021</Copyright>
+    <Description>Link picker property editor for Umbraco 8.</Description>
+    <Copyright>Copyright © 2023</Copyright>
   </PropertyGroup>
 
   <PropertyGroup>
