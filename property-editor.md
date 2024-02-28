@@ -1,5 +1,6 @@
 ---
 order: 2
+teaser: Read more about how to use the link picker in your content types.
 ---
 
 # Property editor

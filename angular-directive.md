@@ -1,8 +1,9 @@
 ---
 order: 5
+teaser: Read more about the Angular directive both the property editor and grid editor are based on.
 ---
 
-# Angular directive
+# Angular Directive
 
 In relation to the backoffice, the main logic of the link picker has been isolated into an Angular directive that can be used in your custom Angular views.
 

@@ -1,5 +1,6 @@
 ---
 order: 1
+teaser: See different ways to install the package.
 ---
 
 # Installation

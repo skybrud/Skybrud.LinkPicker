@@ -1,8 +1,9 @@
 ---
 order: 3
+teaser: Read more about the grid editor.
 ---
 
-# Grid editor
+# Grid Editor
 
 This package also supports a adding a link picker as a grid control in the Umbraco grid. Since you most likely want to configure the link picker your self, you have to add your own `package.manifest` with the details about the editor.
 
