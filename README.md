@@ -1,3 +1,7 @@
 ---
 redirect: ./installation/
 ---
+
+# Documentation
+
+{{overview}}
