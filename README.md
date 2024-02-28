@@ -4,4 +4,4 @@ redirect: ./installation/
 
 # Documentation
 
-{{overview}}
+{{overview?show-teaser=true}}

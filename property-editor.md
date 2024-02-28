@@ -3,7 +3,7 @@ order: 2
 teaser: Read more about how to use the link picker in your content types.
 ---
 
-# Property editor
+# Property Editor
 
 The link picker (both single and multi) saves a list of link picker items. Technically the single link picker is a multi link picker, but limited to one item.
 
